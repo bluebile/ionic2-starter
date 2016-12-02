@@ -1,0 +1,29 @@
+# Specifies files to intentionally ignore when using Git
+
+# arquivos de projeto de IDE
+.project
+.settings
+.buildpath
+nbproject
+*.sublime-project
+.idea
+.vscode
+
+# arquivos privados de IDE
+*.sublime-workspace
+*.iws
+*.iml
+npm-*
+
+# http://git-scm.com/docs/gitignore
+
+node_modules/
+.tmp/
+www/*
+/platforms/
+/plugins/
+res/
+*.swp
+.DS_Store
+Thumbs.db
+!.gitkeep
