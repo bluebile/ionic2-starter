@@ -10,7 +10,7 @@ export class ErrorHandler extends IonicErrorHandler implements ErrorHandlerAngul
 
   constructor(
     private modalCtrl: ModalController,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
     @Inject(forwardRef(() => EnvToken)) private env: string
   ) {
     super();
