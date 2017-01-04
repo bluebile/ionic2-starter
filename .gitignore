@@ -19,9 +19,9 @@ npm-*
 
 node_modules/
 .tmp/
-www/*
-/platforms/
-/plugins/
+/www/*
+/platforms/*
+/plugins/*
 res/
 *.swp
 .DS_Store
