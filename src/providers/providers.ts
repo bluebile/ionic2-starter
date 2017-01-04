@@ -1,3 +1,5 @@
-export const Providers: any[] = [
+import { ErrorHandler } from './error.handler';
 
+export const Providers: any[] = [
+  ErrorHandler
 ];
