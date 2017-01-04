@@ -1,0 +1,16 @@
+{
+  "android": {
+    "debug": {
+      "keystore": "./.config/development.keystore",
+      "alias": "MBADev",
+      "password": "123456",
+      "storePassword": "123456"
+    }
+},
+  "ios": {
+    "debug": {
+      "codeSignIdentity": "iPhone Distribution: MBA TECNOLOGIA LTDA ME",
+      "provisioningProfile": ""
+    }        
+  }
+}
