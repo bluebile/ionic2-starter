@@ -7,7 +7,7 @@
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
     "commit": "git-cz",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "prepush": "npm run lint",
     "lint": "ionic-app-scripts lint",
     "commitmsg": "node node_modules/commitplease"
