@@ -11,6 +11,11 @@ export const AppRoutes = {
 
 export const AppConfig = {
   urlResolver: {
-    dev: AppRoutes
+    dev: AppRoutes,
+    'prod:dev': {
+      '_defaults': {
+        'host': 'http://example.com/rest/'
+      }
+    }
   }
 };
