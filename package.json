@@ -56,7 +56,14 @@
   "commitplease": {
     "style": "angular",
     "types": [
-      "feat", "fix", "docs", "style", "refactor", "perf", "test", "chore"
+      "feat",
+      "fix",
+      "docs",
+      "style",
+      "refactor",
+      "perf",
+      "test",
+      "chore"
     ],
     "scope": "\\S+.*"
   }

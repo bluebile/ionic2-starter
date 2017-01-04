@@ -11,26 +11,26 @@ import { Providers } from '../providers/providers';
 import { AppConfig } from './app.config';
 
 @NgModule({
-    declarations: [
-        MyApp,
-        Pages
-    ],
-    providers: [
-        Providers
-    ],
-    imports: [
-        IonicModule.forRoot(MyApp, AppConfig),
-        TextMaskModule,
-        ConfigurationModule.initialize(AppConfig, 'dev'),
-        UrlResolverModule.initialize(),
-        HttpModule.initialize(DefaultPlugins),
-        HttpPluginsIonicModule
-    ],
-    bootstrap: [IonicApp],
-    entryComponents: [
-        MyApp,
-        Pages
-    ]
+  declarations: [
+    MyApp,
+    Pages
+  ],
+  providers: [
+    Providers
+  ],
+  imports: [
+    IonicModule.forRoot(MyApp, AppConfig),
+    TextMaskModule,
+    ConfigurationModule.initialize(AppConfig, 'dev'),
+    UrlResolverModule.initialize(),
+    HttpModule.initialize(DefaultPlugins),
+    HttpPluginsIonicModule
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    Pages
+  ]
 })
 export class AppModule {
 }
