@@ -4,16 +4,21 @@
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
-    "preionic:build": "node ./scripts/app/replace.env",
-    "preionic:serve": "node ./scripts/app/replace.env",
-    "postinstall": "node ./scripts/app/create.env",
+    "build:android": "cordova prepare --platforms android && ionic build android",
+    "build:ios": "cordova prepare --platforms ios && ionic build ios",
+    "build:wp": "cordova prepare --platforms windows && ionic build windows",
+    "build:ci": "npm run clean:cordova && cordova prepare --platforms && ionic build android ios",
+    "clean:cordova": "rimraf ./platforms/* ./plugins/*",
+    "commit": "git-cz",
+    "commitmsg": "node node_modules/commitplease",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
-    "commit": "git-cz",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "prepush": "npm run lint",
     "lint": "ionic-app-scripts lint",
-    "commitmsg": "node node_modules/commitplease"
+    "postinstall": "node ./scripts/app/create.env",
+    "preionic:build": "node ./scripts/app/replace.env",
+    "preionic:serve": "node ./scripts/app/replace.env",
+    "prepush": "npm run lint"
   },
   "config": {
     "ionic_bundler": "rollup",
