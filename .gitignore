@@ -27,3 +27,5 @@ res/
 .DS_Store
 Thumbs.db
 !.gitkeep
+
+/src/app/app.env.ts
