@@ -75,6 +75,16 @@ export class HttpAdapter extends AdapterOptions {
      return this;
    }
 
+   setHeaders(headers: Object): this {
+     this.requestOptions.headers = headers;
+     return this;
+   }
+
+   setRequestOptions(options: any): this {
+     this.requestOptions = options;
+     return this;
+   }
+
    setParamNameIdentity(name: string): this {
      this.paramNameIdentity = name;
      return this;
@@ -91,13 +101,21 @@ export class HttpAdapter extends AdapterOptions {
        .setParamNameIdentity(options.paramNameIdentity)
        .setParamNameCredential(options.paramNameCredential);
 
+     delete options.url;
+     delete options.paramNameIdentity;
+     delete options.paramNameCredential;
+
      if (options.method) {
        this.setMethod(options.method);
+       delete options.method;
      }
 
      if (options.params) {
        this.setParams(options.params);
+       delete options.params;
      }
+
+     this.setRequestOptions(options);
 
      return this;
    }
