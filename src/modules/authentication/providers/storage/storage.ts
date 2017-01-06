@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 
+export interface WriteData {
+  identity: string;
+  data?: any;
+}
+
 @Injectable()
 export abstract class Storage {
   abstract isEmpty(): boolean;
 
-  abstract write(data: Object);
+  abstract write(data: WriteData): void;
 
-  abstract read();
+  abstract read(): WriteData;
 
-  abstract clear();
+  abstract clear(): void;
 }

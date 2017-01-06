@@ -1,23 +1,24 @@
 import { Injectable } from '@angular/core'; 
-import { Storage } from './storage';
+import { Storage, WriteData } from './storage';
 
-export const KeyId = '_authlocalstorage';
+const KeyId = '_authlocalstorage';
 
 @Injectable()
 export class LocalStorage implements Storage {
+
   isEmpty() {
     return localStorage.getItem(KeyId) === null;
   }
 
-  write(data: Object) {
+  write(data: WriteData): void {
     localStorage.setItem(KeyId, JSON.stringify(data));
   }
 
-  read() {
+  read(): WriteData {
     return JSON.parse(localStorage.getItem(KeyId));
   }
 
-  clear() {
+  clear(): void {
     localStorage.setItem(KeyId, null);
   }
 }

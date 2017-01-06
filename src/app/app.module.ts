@@ -11,7 +11,7 @@ import { Pages } from '../pages/pages';
 import { Providers } from '../providers/providers';
 import { AppConfig } from './app.config';
 import { Env, ProviderEnv } from './app.env';
-import { HttpAdapter } from '../modules/authentication';
+import { Adapter, HttpAdapter, AuthenticationModule } from '../modules/authentication';
 
 // extração mensagem de erro do serviço
 export function extraMessageError(response: any) {
@@ -29,7 +29,8 @@ export function extraMessageError(response: any) {
     ConfigurationModule.initialize(AppConfig, Env),
     UrlResolverModule.initialize(),
     HttpModule.initialize(DefaultPlugins),
-    HttpPluginsIonicModule
+    HttpPluginsIonicModule,
+    AuthenticationModule
   ],
   providers: [
     Storage,
@@ -37,7 +38,7 @@ export function extraMessageError(response: any) {
     { provide: ThrowExceptionStatusToken, useValue: extraMessageError },
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     ProviderEnv,
-    HttpAdapter
+    { provide: Adapter, useClass: HttpAdapter }
   ],
   bootstrap: [IonicApp],
   entryComponents: [

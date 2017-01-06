@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'; 
-import { Storage } from './storage';
+import { Storage, WriteData } from './storage';
 
-export const KeyId = '_authnoopersist';
+const KeyId = '_authnoopersist';
 
 @Injectable()
 export class NonPersistent implements Storage {
@@ -12,15 +12,15 @@ export class NonPersistent implements Storage {
     return this.data[KeyId] === undefined || this.data[KeyId] === null;
   }
 
-  write(data: Object) {
+  write(data: WriteData): void {
     this.data[KeyId] = data;
   }
 
-  read() {
+  read(): WriteData {
     return this.data[KeyId];
   }
 
-  clear() {
+  clear(): void {
     delete this.data[KeyId];
   }
 }
