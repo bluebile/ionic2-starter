@@ -6,10 +6,19 @@ export const AppRoutes = {
   'exemplo': {
     'url': 'exemplo',
     'method': 'GET'
+  },
+  'login': {
+    'url': 'http://example.auth.com'
   }
 };
 
 export const AppConfig = {
+  authentication: {
+    http: {
+      paramNameIdentity: 'username',
+      paramNameCredential: 'password',
+    }
+  },
   urlResolver: {
     dev: AppRoutes,
     'prod:dev': {

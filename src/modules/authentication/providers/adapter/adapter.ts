@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Result } from '../result';
 
 @Injectable()
 export abstract class Adapter {
@@ -21,8 +22,8 @@ export abstract class Adapter {
   }
 
   getCredential(): string {
-      return this.credential;
+    return this.credential;
   }
 
-  abstract authenticate(): Promise<any> ;
+  abstract authenticate(): Promise<Result> ;
 }

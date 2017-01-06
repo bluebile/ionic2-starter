@@ -1,4 +1,9 @@
-export class Result {
+export enum ResultCode {
+  FAILURE,
+  SUCCESS
+};
+
+export class Result { 
   constructor(private code: number, private identity?: any) {}
 
   getCode(): number {
