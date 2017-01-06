@@ -5,7 +5,8 @@ import { Authetication } from './authentication';
 @NgModule({
   providers: [
     { provide: HttpAdapterOptionsToken, useValue: null },
-    HttpAdapter
+    HttpAdapter,
+    Authentication
   ]
 })
 export class AuthenticationModule {
