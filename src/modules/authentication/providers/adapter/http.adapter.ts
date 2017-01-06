@@ -137,10 +137,10 @@ export class HttpAdapter extends AdapterOptions {
    }
 
    protected createResultSuccess(response: any): Result {
-     return new Result(ResultCode.SUCCESS, response);
+     return new Result(ResultCode.SUCCESS, this.getIdentity(), response.json() || response.body());
    }
 
    protected createResultFailure(err: any): Result {
-     return new Result(ResultCode.FAILURE, null);
+     return new Result(ResultCode.FAILURE);
    }
 }
