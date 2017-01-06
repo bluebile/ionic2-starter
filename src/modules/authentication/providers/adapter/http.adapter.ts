@@ -36,9 +36,9 @@ export class HttpAdapter extends AdapterOptions {
      }
    };
 
-   private paramNameIdentity: string;
+   protected paramNameIdentity: string;
 
-   private paramNameCredential: string;
+   protected paramNameCredential: string;
 
    constructor(
      protected http: Http,
@@ -115,10 +115,18 @@ export class HttpAdapter extends AdapterOptions {
 
      return new Promise((resolve: any, reject: any) => {
        this.http.request(options).subscribe((response) => {
-         resolve(new Result(ResultCode.SUCCESS, response));
+         resolve(this.createResultSuccess(response));
        }, (err: any) => {
-         reject(new Result(ResultCode.FAILURE, null));
+         reject(this.createResultFailure(err));
        });
      });
+   }
+
+   protected createResultSuccess(response: any): Result {
+     return new Result(ResultCode.SUCCESS, response);
+   }
+
+   protected createResultFailure(err: any): Result {
+     return new Result(ResultCode.FAILURE, null);
    }
 }
