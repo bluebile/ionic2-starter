@@ -1,6 +1,7 @@
 import { Injectable , Inject, OpaqueToken } from '@angular/core'; 
-import { Http } from '@ramonornela/http';
+import { Http } from '@angular/http';
 import { Config } from '@ramonornela/configuration';
+import { Resolve } from '@ramonornela/url-resolver';
 import { AdapterOptions } from './adapter.options';
 import { Result, ResultCode } from '../result';
 
@@ -21,27 +22,21 @@ export interface HttpAdapterOptions {
 @Injectable()
 export class HttpAdapter extends AdapterOptions {
 
-   protected httpOptions: any = {
-     params: {},
-     requestOptions: {
-       method: 'POST'
-     },
-     options: {
-       plugins: {
-         '*': {
-           allow: false,
-           throwsException: false
-         }
-       }
-     }
+   protected url: string;
+
+   protected params: Object = {};
+
+   protected paramNameIdentity: string = 'username';
+
+   protected paramNameCredential: string = 'password';
+
+   protected requestOptions: any = {
+     method: 'POST'
    };
-
-   protected paramNameIdentity: string;
-
-   protected paramNameCredential: string;
 
    constructor(
      protected http: Http,
+     protected resolve: Resolve,
      config: Config,
      @Inject(HttpAdapterOptionsToken) options?: HttpAdapterOptions
    ) {
@@ -66,17 +61,17 @@ export class HttpAdapter extends AdapterOptions {
    }
 
    setUrl(url: string): this {
-     this.httpOptions.url = url;
+     this.url = url;
      return this;
    }
 
    setMethod(method: string): this {
-     this.httpOptions.options.method = method;
+     this.requestOptions.method = method;
      return this;
    }
 
    setParams(params: Object): this {
-     this.httpOptions.params = params;
+     this.params = params;
      return this;
    }
 
@@ -108,13 +103,14 @@ export class HttpAdapter extends AdapterOptions {
    }
 
    authenticate(): Promise<Result> {
-     let options = this.httpOptions;
+     let params = this.params;
 
-     options.params[this.paramNameIdentity] = this.getIdentity();
-     options.params[this.paramNameCredential] = this.getCredential();
+     params[this.paramNameIdentity] = this.getIdentity();
+     params[this.paramNameCredential] = this.getCredential();
 
+     let url = this.resolve.url(this.url, params);
      return new Promise((resolve: any, reject: any) => {
-       this.http.request(options).subscribe((response) => {
+       this.http.request(url, this.requestOptions).subscribe((response) => {
          resolve(this.createResultSuccess(response));
        }, (err: any) => {
          reject(this.createResultFailure(err));
