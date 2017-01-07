@@ -45,7 +45,7 @@ export class HttpAdapter extends AdapterOptions {
    constructor(
      protected http: Http,
      protected resolve: Resolve,
-     config: Config,
+     @Optional() config: Config,
      @Optional() @Inject(HttpAdapterOptionsToken) options: any
    ) {
      super();
