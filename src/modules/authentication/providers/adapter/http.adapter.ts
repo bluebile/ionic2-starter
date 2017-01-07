@@ -140,6 +140,11 @@ export class HttpAdapter extends AdapterOptions {
      if (options.headers) {
        this.setHeaders(options.headers);
        delete options.headers;
+     } else {
+       let headers = this.resolve.getMetadata().getHeaders(this.url);
+       if (headers) {
+         this.setHeaders(headers);
+       }
      }
 
      if (options.callbackResolve) {
