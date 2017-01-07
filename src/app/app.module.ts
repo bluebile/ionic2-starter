@@ -11,7 +11,7 @@ import { Pages } from '../pages/pages';
 import { Providers } from '../providers/providers';
 import { AppConfig } from './app.config';
 import { Env, ProviderEnv } from './app.env';
-import { Adapter, HttpAdapter, AuthenticationModule } from '../modules/authentication';
+import { Adapter, HttpAdapter, AuthenticationHttpModule } from '../modules/authentication';
 
 // extração mensagem de erro do serviço
 export function extraMessageError(response: any) {
@@ -30,7 +30,7 @@ export function extraMessageError(response: any) {
     UrlResolverModule.initialize(),
     HttpModule.initialize(DefaultPlugins),
     HttpPluginsIonicModule,
-    AuthenticationModule
+    AuthenticationHttpModule.initialize()
   ],
   providers: [
     Storage,
