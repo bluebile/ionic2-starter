@@ -163,12 +163,10 @@ export class HttpAdapter extends AdapterOptions {
    }
 
    authenticate(): Promise<Result> {
-     let params = this.params;
 
-     params[this.paramNameIdentity] = this.getIdentity();
-     params[this.paramNameCredential] = this.getCredential();
-
+     let params = this.bindParams();
      let url = this.resolve.url(this.url, params);
+
      return new Promise((resolve: any, reject: any) => {
        this.http.request(url, this.requestOptions).subscribe((response) => {
          if (typeof this.callbackResolve === 'function') {
@@ -184,6 +182,15 @@ export class HttpAdapter extends AdapterOptions {
          reject(this.createResultFailure(err));
        });
      });
+   }
+
+   protected bindParams(): Object {
+     let params = this.params;
+
+     params[this.paramNameIdentity] = this.getIdentity();
+     params[this.paramNameCredential] = this.getCredential();
+
+     return params;
    }
 
    protected createResultSuccess(response: any): Result {
