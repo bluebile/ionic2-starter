@@ -40,6 +40,10 @@ export class Authentication {
       throw new Error('Adapter is required');
     }
 
+    if (this.has()) {
+      this.clear();
+    }
+
     return new Promise((resolve, reject) => {
       adapter.authenticate().then((result: Result) => {
         if (result.isValid()) {
@@ -54,5 +58,33 @@ export class Authentication {
         reject(err);
       });
     });
+  }
+
+  has() {
+    return !this.getStorage().isEmpty();
+  }
+
+  clear() {
+    this.getStorage().clear();
+  }
+
+  getIdentity() {
+    let storage = this.getStorage();
+
+    if (storage.isEmpty()) {
+      return;
+    }
+
+    return storage.read().identity;
+  }
+
+  getData() {
+    let storage = this.getStorage();
+
+    if (storage.isEmpty()) {
+      return;
+    }
+
+    return storage.read().data;
   }
 }
