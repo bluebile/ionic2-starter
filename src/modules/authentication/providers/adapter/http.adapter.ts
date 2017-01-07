@@ -12,11 +12,14 @@ export const ConfigKeyAdapter = 'http';
 export const HttpAdapterOptionsToken = new OpaqueToken('HTTPADAPTEROPTIONS'); 
 
 export interface HttpAdapterOptions {
+  [propName: string]: any;
   url: string;
-  paramNameIdentity: string;
-  paramNameCredential: string;
+  paramNameIdentity?: string;
+  paramNameCredential?: string;
   method?: string;
   params?: Object;
+  callbackResolve?: Function;
+  callbackReject?: Function;
 }
 
 @Injectable()
@@ -29,6 +32,10 @@ export class HttpAdapter extends AdapterOptions {
    protected paramNameIdentity: string = 'username';
 
    protected paramNameCredential: string = 'password';
+
+   protected callbackResolve: Function;
+
+   protected callbackReject: Function;
 
    protected requestOptions: any = {
      method: 'POST'
@@ -55,8 +62,7 @@ export class HttpAdapter extends AdapterOptions {
          if (options) {
            this.setOptions(options);
          }
-       } 
-       
+       }
      }
    }
 
@@ -95,15 +101,30 @@ export class HttpAdapter extends AdapterOptions {
      return this;
    }
 
-   setOptions(options: HttpAdapterOptions): this {
-     
-     this.setUrl(options.url)
-       .setParamNameIdentity(options.paramNameIdentity)
-       .setParamNameCredential(options.paramNameCredential);
+   setCallbackResolve(callback: Function): this {
+     this.callbackResolve = callback;
+     return this;
+   }
 
+   setCallbackReject(callback: Function): this {
+     this.callbackReject = callback;
+     return this;
+   }
+
+   setOptions(options: HttpAdapterOptions): this {
+
+     this.setUrl(options.url);
      delete options.url;
-     delete options.paramNameIdentity;
-     delete options.paramNameCredential;
+
+     if (options.paramNameIdentity) {
+       this.setParamNameIdentity(options.paramNameIdentity);
+       delete options.paramNameIdentity;
+     }
+
+     if (options.paramNameCredential) {
+       this.setParamNameCredential(options.paramNameCredential);
+       delete options.paramNameCredential;
+     }
 
      if (options.method) {
        this.setMethod(options.method);
@@ -113,6 +134,14 @@ export class HttpAdapter extends AdapterOptions {
      if (options.params) {
        this.setParams(options.params);
        delete options.params;
+     }
+
+     if (options.callbackResolve) {
+       this.setCallbackResolve(options.callbackResolve);
+     }
+
+     if (options.callbackReject) {
+       this.setCallbackReject(options.callbackReject);
      }
 
      this.setRequestOptions(options);
@@ -129,8 +158,16 @@ export class HttpAdapter extends AdapterOptions {
      let url = this.resolve.url(this.url, params);
      return new Promise((resolve: any, reject: any) => {
        this.http.request(url, this.requestOptions).subscribe((response) => {
+         if (typeof this.callbackResolve === 'function') {
+           resolve(this.callbackResolve.apply(this, [ response ]));
+           return;
+         }
          resolve(this.createResultSuccess(response));
        }, (err: any) => {
+         if (typeof this.callbackReject === 'function') {
+           reject(this.callbackReject.apply(this, [ err ]));
+           return;
+         }
          reject(this.createResultFailure(err));
        });
      });
