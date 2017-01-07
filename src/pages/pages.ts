@@ -5,5 +5,9 @@ import { HomePage } from './home/home';
  * can find them. As you add and remove pages, make sure to keep this list up to date.
  */
 export const Pages: any[] = [
-    HomePage
+  HomePage
 ];
+
+export const Home = HomePage;
+
+// export const Login = LoginPage;
