@@ -138,10 +138,12 @@ export class HttpAdapter extends AdapterOptions {
 
      if (options.callbackResolve) {
        this.setCallbackResolve(options.callbackResolve);
+       delete options.callbackResolve;
      }
 
      if (options.callbackReject) {
        this.setCallbackReject(options.callbackReject);
+       delete options.callbackReject;
      }
 
      this.setRequestOptions(options);
