@@ -14,8 +14,8 @@
 ## build ios produção
 ``` npm run build:ios -- --prod ```
 
-## build ios
+## build windows
 ``` npm run build:windows ```
 
-## build ios produção
+## build windows produção
 ``` npm run build:windows -- --prod ```
