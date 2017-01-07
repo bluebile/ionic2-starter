@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpAdapterOptionsToken, HttpAdapter } from './providers';
-import { Authetication } from './authentication';
+import { Authentication, HttpAdapterOptionsToken, HttpAdapter } from './providers';
 
 @NgModule({
   providers: [

@@ -1,8 +1,9 @@
-import { Optional } from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 import { Storage, LocalStorage } from './storage';
 import { Adapter } from './adapter';
 import { Result } from './result';
 
+@Injectable()
 export class Authentication {
   constructor(
     @Optional() private storage: Storage,
