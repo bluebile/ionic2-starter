@@ -31,7 +31,7 @@ export class Authentication {
     return this.adapter;
   }
 
-  authenticate(adapter?: Adapter) {
+  authenticate(adapter?: Adapter): Promise<Result> {
     if (!adapter) {
       adapter = this.getAdapter();
     }
@@ -40,13 +40,17 @@ export class Authentication {
       throw new Error('Adapter is required');
     }
 
-    adapter.authenticate().then((result: Result) => {
-      if (result.isValid()) {
-        this.getStorage().write({
-          identity: result.getIdentity(),
-          data: result.getData()
-        });
-      }
+    return new Promise((resolve, reject) => {
+      return adapter.authenticate().then((result: Result) => {
+        if (result.isValid()) {
+          this.getStorage().write({
+            identity: result.getIdentity(),
+            data: result.getData()
+          });
+          resolve(result);
+        }
+        reject(result);
+      });
     });
   }
 }
