@@ -18,6 +18,7 @@ export interface HttpAdapterOptions {
   paramNameCredential?: string;
   method?: string;
   params?: Object;
+  headers?: any;
   callbackResolve?: Function;
   callbackReject?: Function;
 }
@@ -134,6 +135,11 @@ export class HttpAdapter extends AdapterOptions {
      if (options.params) {
        this.setParams(options.params);
        delete options.params;
+     }
+
+     if (options.headers) {
+       this.setHeaders(options.headers);
+       delete options.headers;
      }
 
      if (options.callbackResolve) {
