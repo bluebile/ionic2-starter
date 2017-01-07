@@ -1,4 +1,4 @@
-import { Injectable , Inject, OpaqueToken } from '@angular/core'; 
+import { Injectable , Inject, OpaqueToken, Optional } from '@angular/core';
 import { Http } from '@angular/http';
 import { Config } from '@ramonornela/configuration';
 import { Resolve } from '@ramonornela/url-resolver';
@@ -46,7 +46,7 @@ export class HttpAdapter extends AdapterOptions {
      protected http: Http,
      protected resolve: Resolve,
      config: Config,
-     @Inject(HttpAdapterOptionsToken) options?: HttpAdapterOptions
+     @Optional() @Inject(HttpAdapterOptionsToken) options: any
    ) {
      super();
 
