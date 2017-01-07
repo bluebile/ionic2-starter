@@ -41,7 +41,7 @@ export class Authentication {
     }
 
     return new Promise((resolve, reject) => {
-      return adapter.authenticate().then((result: Result) => {
+      adapter.authenticate().then((result: Result) => {
         if (result.isValid()) {
           this.getStorage().write({
             identity: result.getIdentity(),
@@ -50,6 +50,8 @@ export class Authentication {
           resolve(result);
         }
         reject(result);
+      }).catch((err) => {
+        reject(err);
       });
     });
   }
