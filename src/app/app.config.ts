@@ -15,6 +15,7 @@ export const AppRoutes = {
 export const AppConfig = {
   authentication: {
     http: {
+      url: 'login',
       paramNameIdentity: 'username',
       paramNameCredential: 'password',
     }
