@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
+import { Authentication } from '@ramonornela/authentication';
 import { Home } from '../pages/pages';
 
 @Component({
@@ -10,7 +11,7 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
 
-  constructor(public platform: Platform) {
+  constructor(private platform: Platform, private auth: Authentication) {
     this.platform.ready().then(() => {
       StatusBar.styleDefault();
     });
@@ -23,6 +24,9 @@ export class MyApp {
   }
 
   private showHome() {
+    if (!this.auth.has()) {
+      console.log('renderizar tela de login');
+    }
     this.nav.setRoot(Home).then(() => {
       Splashscreen.hide();
     });
