@@ -1,8 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
-import { Platform, Nav } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
-import { Authentication } from '@ramonornela/authentication';
 import { Home } from '../pages/pages';
+import { Component, ViewChild } from '@angular/core';
+import { Authentication } from '@ramonornela/authentication';
+import { Nav, Platform } from 'ionic-angular';
+import { Splashscreen, StatusBar } from 'ionic-native';
 
 @Component({
   template: `<ion-nav></ion-nav>`

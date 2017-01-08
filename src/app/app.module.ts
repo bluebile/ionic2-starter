@@ -1,22 +1,20 @@
-import { NgModule, LOCALE_ID } from '@angular/core';
-import { IonicApp, IonicModule } from 'ionic-angular';
-import { TextMaskModule } from 'angular2-text-mask';
-import { Storage } from '@ionic/storage';
-import { ConfigurationModule } from '@ramonornela/configuration';
-import { UrlResolverModule } from '@ramonornela/url-resolver';
-import { HttpModule, DefaultPlugins, ThrowExceptionStatusToken } from '@ramonornela/http';
-import { HttpPluginsIonicModule } from '@ramonornela/http-plugins-ionic';
-import { MyApp } from './app.component';
 import { Pages } from '../pages/pages';
 import { Providers } from '../providers/providers';
+import { MyApp } from './app.component';
 import { AppConfig } from './app.config';
 import { Env, ProviderEnv } from './app.env';
-import { Adapter, HttpAdapter, AuthenticationHttpModule } from '@ramonornela/authentication';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { Storage } from '@ionic/storage';
+import { Adapter, AuthenticationHttpModule, HttpAdapter } from '@ramonornela/authentication';
+import { ConfigurationModule } from '@ramonornela/configuration';
+import { DefaultPlugins, HttpModule, ThrowExceptionStatusToken } from '@ramonornela/http';
+import { HttpPluginsIonicModule } from '@ramonornela/http-plugins-ionic';
+import { UrlResolverModule } from '@ramonornela/url-resolver';
+import { TextMaskModule } from 'angular2-text-mask';
+import { IonicApp, IonicModule } from 'ionic-angular';
 
 // extração mensagem de erro do serviço
-export function extraMessageError(response: any) {
-  
-}
+export function extraMessageError(response: any) {};
 
 @NgModule({
   declarations: [
