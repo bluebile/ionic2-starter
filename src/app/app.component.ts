@@ -1,4 +1,4 @@
-import { Home } from '../pages/pages';
+import { Home, Login } from '../pages/pages';
 import { Component, ViewChild } from '@angular/core';
 import { Authentication } from '@ramonornela/authentication';
 import { Nav, Platform } from 'ionic-angular';
@@ -25,7 +25,8 @@ export class MyApp {
 
   private showHome() {
     if (!this.auth.has()) {
-      console.log('renderizar tela de login');
+      this.nav.setRoot(Login);
+      return;
     }
     this.nav.setRoot(Home).then(() => {
       Splashscreen.hide();
