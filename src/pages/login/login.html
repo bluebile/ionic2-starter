@@ -3,7 +3,7 @@
     <div class="box-inputs">
       <ion-item [class.error]="!authForm.controls['cpf'].valid && submitAttempted">
         <ion-label>CPF:</ion-label>
-        <ion-input type="tel" maxlength="6" [formControl]="authForm.controls['cpf']"></ion-input>
+        <ion-input type="tel" maxlength="11" [textMask]="{mask: mask, guide: false}" [formControl]="authForm.controls['cpf']"></ion-input>
       </ion-item>
       <ion-item [class.error]="!authForm.controls['password'].valid && submitAttempted">
         <ion-label>Senha:</ion-label>
