@@ -10,23 +10,14 @@ Projeto starter com features comuns para os projetos.
 
 # Build Cordova
 
-## build android
-``` npm run build:android```
+| Plataforma    | Comando                     |
+| ------------- |:----------------------------:
+| Android       | ```npm run build:android``` |
+| iOS           | ```npm run build:ios```     |
+| Windows       | ```npm run build:windows``` |
 
-## build android produção
-``` npm run build:android -- --prod```
-
-## build ios
-``` npm run build:ios ```
-
-## build ios produção
-``` npm run build:ios -- --prod```
-
-## build windows
-``` npm run build:windows ```
-
-## build windows produção
-``` npm run build:windows -- --prod```
+Passando options do [Ionic-App-Scripts](https://github.com/driftyco/ionic-app-scripts/blob/master/README.md) para alguns dos comandos listados basta adicionar ```--``` após o comando desejado
+ex: ```npm run build:android -- --prod```
 
 # DevOps
 
