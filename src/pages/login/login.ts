@@ -1,6 +1,6 @@
+import { Masks } from '../../util/format';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Masks } from '../../util/format';
 import { AlertController, MenuController, NavController } from 'ionic-angular';
 
 @Component({

@@ -24,10 +24,13 @@ export class MyApp {
   }
 
   private showHome() {
-    if (!this.auth.has()) {
-      this.nav.setRoot(Login);
-      return;
+    if (Login) {
+      if (!this.auth.has()) {
+        this.nav.setRoot(Login);
+        return;
+      }
     }
+
     this.nav.setRoot(Home).then(() => {
       Splashscreen.hide();
     });
