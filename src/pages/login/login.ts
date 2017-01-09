@@ -1,6 +1,7 @@
 import { Masks, Validators as ValidatorsInternal } from '../../util';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Adapter, Authentication } from '@ramonornela/authentication';
 
 @Component({
   selector: 'page-login',
@@ -14,7 +15,9 @@ export class LoginPage {
   mask = Masks.cpf;
 
   constructor(
-    formBuilder: FormBuilder
+    formBuilder: FormBuilder,
+    private authAdapter: Adapter,
+    private auth: Authentication
   ) {
     this.form = formBuilder.group({
       cpf: ['', Validators.compose([Validators.required, ValidatorsInternal.cpf ])],
@@ -47,9 +50,16 @@ export class LoginPage {
   login(formData: any): void {
     this.submitAttempted = true;
 
-    console.log(formData);
     if (this.validate()) {
-      console.log(formData);
+      this.authAdapter
+        .setIdentity(formData.cpf)
+        .setCredential(formData.password);
+
+      this.auth.authenticate().then(() => {
+        alert('login success');
+      }).catch(() => {
+        alert('login failure');
+      });
     }
   }
 }
