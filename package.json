@@ -1,6 +1,7 @@
 {
   "name": "ionic2-starter",
-  "author": "Ionic Framework",
+  "author": "Mba Mobi",
+  "version": "0.0.1",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
