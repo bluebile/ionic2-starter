@@ -5,7 +5,7 @@ var changelogCommand = './node_modules/.bin/conventional-changelog -p angular';
 var changelogContent = execSync(changelogCommand).toString();
 
 var GithubApi = require('github');
-var packageJSON = require('../package.json');
+var packageJSON = require('../../package.json');
 var token = process.argv[2] ? process.argv[2] : null;
 
 var github = new GithubApi({
