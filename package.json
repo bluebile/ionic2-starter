@@ -12,6 +12,7 @@
     "commit": "git-cz",
     "commitmsg": "node node_modules/commitplease",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "gh:release": "node ./scripts/git-release",
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
     "lint": "ionic-app-scripts lint",
