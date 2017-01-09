@@ -14,7 +14,7 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { IonicApp, IonicModule } from 'ionic-angular';
 
 // extração mensagem de erro do serviço
-export function extraMessageError(response: any) {};
+export function extraMessageError() {};
 
 @NgModule({
   declarations: [

@@ -3,13 +3,12 @@ import { ErrorHandler as ErrorHandlerAngular, forwardRef, Inject, Injectable, } 
 import { Response } from '@angular/http';
 import { HttpException } from '@ramonornela/http';
 import { NoConnectionException } from '@ramonornela/http-plugins-ionic';
-import { IonicErrorHandler, ModalController, ToastController } from 'ionic-angular';
+import { IonicErrorHandler, ToastController } from 'ionic-angular';
 
 @Injectable()
 export class ErrorHandler extends IonicErrorHandler implements ErrorHandlerAngular {
 
   constructor(
-    private modalCtrl: ModalController,
     private toastCtrl: ToastController,
     @Inject(forwardRef(() => EnvToken)) private env: string
   ) {
