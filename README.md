@@ -11,7 +11,7 @@ Projeto starter com features comuns para os projetos.
 # Build Cordova
 
 | Plataforma    | Comando                     |
-| ------------- |:----------------------------:
+| ------------- |-----------------------------|
 | Android       | ```npm run build:android``` |
 | iOS           | ```npm run build:ios```     |
 | Windows       | ```npm run build:windows``` |
