@@ -42,6 +42,8 @@
     "@ramonornela/configuration": "0.0.13",
     "@ramonornela/http": "0.0.34",
     "@ramonornela/http-plugins-ionic": "0.0.13",
+    "@ramonornela/json-server": "0.9.3",
+    "@ramonornela/jsonpath": "0.2.10",
     "@ramonornela/url-resolver": "0.0.24",
     "angular2-text-mask": "2.1.0",
     "intl": "1.2.5",
