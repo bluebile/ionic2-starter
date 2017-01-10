@@ -16,8 +16,8 @@ export const AppConfig = {
   authentication: {
     http: {
       url: 'login',
-      paramNameIdentity: 'username',
-      paramNameCredential: 'password',
+      paramNameIdentity: 'cpf',
+      paramNameCredential: 'senha',
     }
   },
   urlResolver: {

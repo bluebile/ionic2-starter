@@ -1,0 +1,10 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Ramon Henrique Ornelas",
+      "cpf": "09008689618",
+      "senha": "12345678"
+    }
+  ]
+}
