@@ -29,3 +29,7 @@ ex: ```npm run build:android -- --prod```
 - Passo 1 - Incrementar o package.json
 - Passo 2 - Criar/Atualizar changelog(CHANGELOG.md) através dos commits ```npm run changelog```
 - Passo 3 - Gerando tag no github ```npm run gh:release <access_token>```
+
+Contributing
+
+See [CONTRIBUTING.md](https://github.com/mbamobi/ionic2.starter/blob/master/.github/CONTRIBUTING.md)
