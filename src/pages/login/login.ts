@@ -1,6 +1,6 @@
 import { Masks, Validators as ValidatorsInternal } from '../../util';
-import { Home } from '../pages';
 import { User } from '../../providers/providers';
+import { Home } from '../pages';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { App, ToastController } from 'ionic-angular';
