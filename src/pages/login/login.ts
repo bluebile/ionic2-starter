@@ -1,7 +1,9 @@
 import { Masks, Validators as ValidatorsInternal } from '../../util';
+import { Home } from '../pages';
+import { User } from '../providers';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Adapter, Authentication } from '@ramonornela/authentication';
+import { App, ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-login',
@@ -16,8 +18,9 @@ export class LoginPage {
 
   constructor(
     formBuilder: FormBuilder,
-    private authAdapter: Adapter,
-    private auth: Authentication
+    private app: App,
+    private toastCtrl: ToastController,
+    private user: User
   ) {
     this.form = formBuilder.group({
       cpf: ['', Validators.compose([Validators.required, ValidatorsInternal.cpf ])],
@@ -34,31 +37,28 @@ export class LoginPage {
 
     if (this.form.controls['cpf'].hasError('required')) {
       msg = 'O CPF é obrigatório';
-    } else if (this.form.controls['cpf'].hasError('minLength')
-      || this.form.controls['cpf'].hasError('maxLength')
-      || this.form.controls['cpf'].hasError('pattern')) {
-      msg = 'A CPF é composto de 11 dígitos';
+    } else if (this.form.controls['cpf'].hasError('invalid')) {
+      msg = 'CPF inválido.';
     } else if (this.form.controls['password'].hasError('required')) {
       msg = 'A senha é obrigatória';
     }
 
-    console.log(msg);
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+      position: 'top'
+    });
+
+    toast.present();
 
     return false;
   }
 
   login(formData: any): void {
     this.submitAttempted = true;
-
     if (this.validate()) {
-      this.authAdapter
-        .setIdentity(formData.cpf.replace(/\D/g, ''))
-        .setCredential(formData.password);
-
-      this.auth.authenticate().then(() => {
-        alert('login success');
-      }).catch(() => {
-        alert('login failure');
+      this.user.login(formData.cpf.replace(/\D/g, ''), formData.password).then(() => {
+        this.app.getActiveNav().setRoot(Home);
       });
     }
   }
