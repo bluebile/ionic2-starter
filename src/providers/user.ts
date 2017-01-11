@@ -1,6 +1,8 @@
+import { Injectable } from '@angular/core';
 import { Adapter, Authentication } from '@ramonornela/authentication';
 import { Events } from 'ionic-angular';
 
+@Injectable()
 export class User {
   constructor(
     private authAdapter: Adapter,
