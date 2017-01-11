@@ -52,7 +52,7 @@ export class LoginPage {
 
     if (this.validate()) {
       this.authAdapter
-        .setIdentity(formData.cpf)
+        .setIdentity(formData.cpf.replace(/\D/g, ''))
         .setCredential(formData.password);
 
       this.auth.authenticate().then(() => {

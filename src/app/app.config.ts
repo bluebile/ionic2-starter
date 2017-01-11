@@ -8,7 +8,7 @@ export const AppRoutes = {
     'method': 'GET'
   },
   'login': {
-    'url': 'http://example.auth.com'
+    'url': 'http://localhost:3000/auth'
   }
 };
 
@@ -18,6 +18,9 @@ export const AppConfig = {
       url: 'login',
       paramNameIdentity: 'cpf',
       paramNameCredential: 'senha',
+      headers: {
+        'Content-type': 'application/x-www-form-urlencoded'
+      }
     }
   },
   urlResolver: {

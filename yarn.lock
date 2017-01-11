@@ -93,8 +93,8 @@
     rxjs "5.0.0-beta.12"
 
 "@ramonornela/authentication@nightly":
-  version "0.0.1-nightly.20170107T231402Z.6c26360"
-  resolved "https://registry.yarnpkg.com/@ramonornela/authentication/-/authentication-0.0.1-nightly.20170107T231402Z.6c26360.tgz#d134969f984bcc3a49cf5ae43da82132f0101cea"
+  version "0.0.1-nightly.20170111T082828Z.40b2a5c"
+  resolved "https://registry.yarnpkg.com/@ramonornela/authentication/-/authentication-0.0.1-nightly.20170111T082828Z.40b2a5c.tgz#2b67061e662ff0bda8b197fdd447fcc0e568382d"
   dependencies:
     "@ramonornela/jsonpath" "0.2.10"
 
@@ -609,8 +609,8 @@ camelcase@^3.0.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
 
 caniuse-db@^1.0.30000525, caniuse-db@^1.0.30000527:
-  version "1.0.30000604"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000604.tgz#bc139270a777564d19c0aadcd832b491d093bda5"
+  version "1.0.30000605"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000605.tgz#c616e335a6df02f865af5e02add72c897cb6579d"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -3160,7 +3160,7 @@ regenerate@^1.2.1:
 
 regex-cache@^0.4.2:
   version "0.4.3"
-  resolved "https://registry.yarnpkg.com/regex-cache/-/regex-cache-0.4.3.tgz#9b1a6c35d4d0dfcef5711ae651e8e9d3d7114145"
+  resolved "http://registry.npmjs.org/regex-cache/-/regex-cache-0.4.3.tgz#9b1a6c35d4d0dfcef5711ae651e8e9d3d7114145"
   dependencies:
     is-equal-shallow "^0.1.3"
     is-primitive "^2.0.0"
@@ -3462,8 +3462,8 @@ sntp@1.x.x:
     hoek "2.x.x"
 
 source-list-map@~0.1.0:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-0.1.7.tgz#d4b5ce2a46535c72c7e8527c71a77d250618172e"
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-0.1.8.tgz#c550b2ab5427f6b3f21f5afead88c4f5587b2106"
 
 source-map-support@^0.3.1:
   version "0.3.3"
