@@ -8,6 +8,9 @@ Projeto starter com features comuns para os projetos.
 - Termo
 - Onboard
 
+# Iniciar Server mock
+```npm run server:init```
+
 # Build Cordova
 
 | Plataforma    | Comando                     |
@@ -19,8 +22,10 @@ Projeto starter com features comuns para os projetos.
 Passando options do [Ionic-App-Scripts](https://github.com/driftyco/ionic-app-scripts/blob/master/README.md) para alguns dos comandos listados basta adicionar ```--``` após o comando desejado
 ex: ```npm run build:android -- --prod```
 
-# DevOps
+# Desenvolvimento
 
-## Gerando tag
+## Gerando novo release
 
-```npm run gh:release <access_token>```
+- Passo 1 - Incrementar o package.json
+- Passo 2 - Criar/Atualizar changelog(CHANGELOG.md) através dos commits ```npm run changelog```
+- Passo 3 - Gerando tag no github ```npm run gh:release <access_token>```
