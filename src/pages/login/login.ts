@@ -3,7 +3,7 @@ import { Masks, Validators as ValidatorsInternal } from '../../util';
 import { Home } from '../pages';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { App, ToastController } from 'ionic-angular';
+import { App, LoadingController, ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-login',
@@ -19,6 +19,7 @@ export class LoginPage {
   constructor(
     formBuilder: FormBuilder,
     private app: App,
+    private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     private user: User
   ) {
@@ -57,8 +58,14 @@ export class LoginPage {
   login(formData: any): void {
     this.submitAttempted = true;
     if (this.validate()) {
+      let loading = this.loadingCtrl.create();
+      loading.present();
+
       this.user.login(formData.cpf.replace(/\D/g, ''), formData.password).then(() => {
         this.app.getActiveNav().setRoot(Home);
+        loading.dismiss();
+      }).catch(() => {
+        loading.dismiss();
       });
     }
   }
