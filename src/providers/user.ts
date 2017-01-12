@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 import { Adapter, Authentication } from '@ramonornela/authentication';
 import { Events } from 'ionic-angular';
 
+export const LoginEvents = {
+  SUCCESS: 'login.success',
+  FAILURE: 'login.failure'
+};
+
 @Injectable()
 export class User {
   constructor(
