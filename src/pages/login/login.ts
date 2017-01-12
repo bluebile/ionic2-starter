@@ -1,8 +1,9 @@
 import { User } from '../../providers/providers';
 import { Masks, Validators as ValidatorsInternal } from '../../util';
-import { Home } from '../pages';
+import { Home, Termo } from '../pages';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Storage } from '@ionic/storage';
 import { App, LoadingController, ToastController } from 'ionic-angular';
 
 @Component({
@@ -20,6 +21,7 @@ export class LoginPage {
     formBuilder: FormBuilder,
     private app: App,
     private loadingCtrl: LoadingController,
+    private storage: Storage,
     private toastCtrl: ToastController,
     private user: User
   ) {
@@ -62,11 +64,26 @@ export class LoginPage {
       loading.present();
 
       this.user.login(formData.cpf.replace(/\D/g, ''), formData.password).then(() => {
-        this.app.getActiveNav().setRoot(Home);
         loading.dismiss();
+        if (Termo) {
+          this.showTermo();
+          return;
+        }
+        this.app.getActiveNav().setRoot(Home);
       }).catch(() => {
         loading.dismiss();
       });
     }
+  }
+
+  showTermo() {
+    this.storage.get('_termo').then((data) => {
+      if (data === true) {
+        this.app.getActiveNav().setRoot(Home);
+        return;
+      }
+
+      this.app.getActiveNav().setRoot(Termo);
+    });
   }
 }

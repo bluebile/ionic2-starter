@@ -1,5 +1,7 @@
 import { HomePage } from './home/home';
 import { LoginPage } from './login/login';
+import { TermoPage } from './termo/termo';
+
 /**
  * The Pages array lists all of the pages we want to use in our app.
  * We then take these pages and inject them into our NgModule so Angular
@@ -7,8 +9,10 @@ import { LoginPage } from './login/login';
  */
 export const Pages: any[] = [
   HomePage,
-  LoginPage
+  LoginPage,
+  TermoPage
 ];
 
 export const Home = HomePage;
 export const Login = LoginPage;
+export const Termo = TermoPage;
