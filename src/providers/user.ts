@@ -19,10 +19,14 @@ export class User {
         .setIdentity(user)
         .setCredential(password);
 
-    return this.auth.authenticate().then((result) => {
-      this.events.publish('login.success', result);
-    }).catch((err) => {
-      this.events.publish('login.error', err);
+    return new Promise((resolve, reject) => {
+      this.auth.authenticate().then((result) => {
+        this.events.publish(LoginEvents.SUCCESS, result);
+        resolve(result);
+      }).catch((err) => {
+        this.events.publish(LoginEvents.FAILURE, err);
+        reject(err);
+      });
     });
   }
 
