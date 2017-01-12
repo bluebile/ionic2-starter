@@ -16,3 +16,9 @@ export const Pages: any[] = [
 export const Home = HomePage;
 export const Login = LoginPage;
 export const Termo = TermoPage;
+
+export {
+  HomePage,
+  LoginPage,
+  TermoPage
+};
