@@ -8,7 +8,12 @@ Projeto starter com features comuns para os projetos.
 - Termo
 - Onboard
 
-# Iniciar Server mock
+# Executando o projeto
+```npm run install``` ou ```yarn install```
+
+```npm run ionic:serve```
+
+### Iniciar Server mock
 ```npm run server:init```
 
 # Build Cordova
