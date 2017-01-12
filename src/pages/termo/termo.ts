@@ -1,7 +1,7 @@
 import { Home } from '../pages';
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { App } from 'ionic-angular';
+import { App, NavParams } from 'ionic-angular';
 
 export const KEY = '_termo';
 
@@ -10,10 +10,25 @@ export const KEY = '_termo';
   templateUrl: 'termo.html'
 })
 export class TermoPage {
+  hiddenButton: boolean = false;
+
   constructor(
     private app: App,
-    private storage: Storage
-  ) {}
+    private storage: Storage,
+    navParams: NavParams
+  ) {
+    if (navParams.get('internal') === true) {
+      this.hiddenButton =  true;
+    }
+  }
+
+  ngAfterViewInit() {
+    this.storage.get(KEY).then((data) => {
+      if (data === true) {
+        this.hiddenButton = true;
+      }
+    });
+  }
 
   accept() {
     this.storage.set(KEY, true);
