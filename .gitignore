@@ -7,7 +7,8 @@
 nbproject
 *.sublime-project
 .idea
-.vscode
+.vscode/*
+!.vscode/settings.json
 
 # arquivos privados de IDE
 *.sublime-workspace
