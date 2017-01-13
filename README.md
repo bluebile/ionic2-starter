@@ -3,7 +3,6 @@
 Projeto starter com features comuns para os projetos.
 
 - Login
-- Menu
 - Home
 - Termo
 - Onboard
@@ -11,10 +10,11 @@ Projeto starter com features comuns para os projetos.
 # Executando o projeto
 ```npm run install``` ou ```yarn install```
 
-```npm run ionic:serve```
-
 ### Iniciar Server mock
 ```npm run server:init```
+
+### Start server dev
+```npm run ionic:serve```
 
 # Build Cordova
 
