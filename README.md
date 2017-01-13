@@ -1,4 +1,4 @@
-# Ionic-Starter
+# Ionic2-Starter
 
 Projeto starter com features comuns para os projetos.
 
@@ -13,7 +13,7 @@ Projeto starter com features comuns para os projetos.
 ### Iniciar Server mock
 ```npm run server:init```
 
-### Start server dev
+### Iniciar server dev
 ```npm run ionic:serve```
 
 # Build Cordova
