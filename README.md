@@ -29,6 +29,21 @@ ex: ```npm run build:android -- --prod```
 
 # Desenvolvimento
 
+## Criar um projeto a partir deste template
+
+Execute o comando:
+
+```npm run copy <pasta_desejada>```
+
+Este copia os fontes para a pasta desejada, mas há a necessidade de modificação manual dos arquivos:
+
+- package.json
+  - alterar os campos: name, homepage, description
+- README.md
+ - customizar para a docs do projeto em questão e alterar link CONTRIBUTING.md
+- .github/CONTRIBUTING.md
+ - alterar link tslint.json
+
 ## Gerando novo release
 
 - Passo 1 - Incrementar o package.json
