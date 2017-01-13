@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-
 var fs = require('fs');
 
 if (fs.existsSync('./src/app/app.env.ts')) {
