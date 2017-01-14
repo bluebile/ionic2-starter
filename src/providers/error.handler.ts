@@ -1,8 +1,8 @@
 import { EnvToken } from '../app/app.env';
 import { ErrorHandler as ErrorHandlerAngular, forwardRef, Inject, Injectable, } from '@angular/core';
 import { Response } from '@angular/http';
-import { HttpException } from '@ramonornela/http';
-import { NoConnectionException } from '@ramonornela/http-plugins-ionic';
+import { HttpException } from '@mbamobi/http';
+import { NoConnectionException } from '@mbamobi/http-plugins-ionic';
 import { IonicErrorHandler, ToastController } from 'ionic-angular';
 
 @Injectable()

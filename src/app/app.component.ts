@@ -1,6 +1,6 @@
 import { Home, Login } from '../pages/pages';
 import { Component, ViewChild } from '@angular/core';
-import { Authentication } from '@ramonornela/authentication';
+import { Authentication } from '@mbamobi/authentication';
 import { Nav, Platform } from 'ionic-angular';
 import { Splashscreen, StatusBar } from 'ionic-native';
 

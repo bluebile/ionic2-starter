@@ -92,27 +92,31 @@
     localforage-cordovasqlitedriver "^1.5.0"
     rxjs "5.0.0-beta.12"
 
-"@ramonornela/authentication@nightly":
-  version "0.0.1-nightly.20170112T110254Z.ac27db3"
-  resolved "https://registry.yarnpkg.com/@ramonornela/authentication/-/authentication-0.0.1-nightly.20170112T110254Z.ac27db3.tgz#0003fa722afbbf4094addc56d378265b95ac2f51"
+"@mbamobi/authentication@nightly":
+  version "0.0.1-nightly.20170114T181027Z.da36162"
+  resolved "https://registry.yarnpkg.com/@mbamobi/authentication/-/authentication-0.0.1-nightly.20170114T181027Z.da36162.tgz#7b78252f2c9b84b13e03efd68e67717a44744158"
   dependencies:
     "@ramonornela/jsonpath" "0.2.10"
 
-"@ramonornela/configuration@0.0.13":
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/@ramonornela/configuration/-/configuration-0.0.13.tgz#666756efca681afece4ccb57aeaed0a128898c0b"
+"@mbamobi/configuration@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@mbamobi/configuration/-/configuration-1.0.0.tgz#4c327c7d408dff7d2016c50184a5e6616f3da7e0"
 
-"@ramonornela/http-plugins-ionic@0.0.13":
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/@ramonornela/http-plugins-ionic/-/http-plugins-ionic-0.0.13.tgz#97bf65775937222ca9669884f778ea4468e84fda"
+"@mbamobi/http-plugins-ionic@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@mbamobi/http-plugins-ionic/-/http-plugins-ionic-1.0.0.tgz#841fb0e6e9d94d678bcb5af81498f6435ec89094"
   dependencies:
     "@ramonornela/jsonpath" "0.2.10"
 
-"@ramonornela/http@0.0.34":
-  version "0.0.34"
-  resolved "https://registry.yarnpkg.com/@ramonornela/http/-/http-0.0.34.tgz#1bad618661375e5e8944aab57d96c79c2042d380"
+"@mbamobi/http@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@mbamobi/http/-/http-1.0.0.tgz#71abacddd65f1341b4339cde8ee118ba15bc34b8"
   dependencies:
     "@ramonornela/jsonpath" "0.2.10"
+
+"@mbamobi/url-resolver@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@mbamobi/url-resolver/-/url-resolver-1.0.1.tgz#619ef982438ba07f090633f0b3c4bb6527730cd3"
 
 "@ramonornela/json-server@0.9.4":
   version "0.9.4"
@@ -146,10 +150,6 @@
     jison "0.4.13"
     static-eval "0.2.3"
     underscore "1.7.0"
-
-"@ramonornela/url-resolver@0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@ramonornela/url-resolver/-/url-resolver-0.0.24.tgz#02bf4e5d2623aa9ecc65ceb9a0f4fa9034c140f3"
 
 "@types/localforage@0.0.30":
   version "0.0.30"
@@ -235,8 +235,8 @@ ansi-escapes@^1.1.0:
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
 
 ansi-regex@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.0.0.tgz#c5061b6e0ef8a81775e50f5d66151bf6bf371107"
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.1.1.tgz#c3b33ab5ee360d86e0e628f0468ae7ef27d654df"
 
 ansi-styles@^2.2.1:
   version "2.2.1"
@@ -1583,7 +1583,7 @@ fresh@0.3.0:
 
 fs-exists-sync@^0.1.0:
   version "0.1.0"
-  resolved "http://registry.npmjs.org/fs-exists-sync/-/fs-exists-sync-0.1.0.tgz#982d6893af918e72d08dec9e8673ff2b5a8d6add"
+  resolved "https://registry.yarnpkg.com/fs-exists-sync/-/fs-exists-sync-0.1.0.tgz#982d6893af918e72d08dec9e8673ff2b5a8d6add"
 
 fs-extra@0.30.0:
   version "0.30.0"
@@ -2092,7 +2092,7 @@ is-obj@^1.0.0:
 
 is-posix-bracket@^0.1.0:
   version "0.1.1"
-  resolved "https://registry.yarnpkg.com/is-posix-bracket/-/is-posix-bracket-0.1.1.tgz#3334dc79774368e92f016e6fbc0a88f5cd6e6bc4"
+  resolved "http://registry.npmjs.org/is-posix-bracket/-/is-posix-bracket-0.1.1.tgz#3334dc79774368e92f016e6fbc0a88f5cd6e6bc4"
 
 is-primitive@^2.0.0:
   version "2.0.0"
@@ -2384,7 +2384,11 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "~3.0.0"
 
-lodash@4, lodash@4.17.2, lodash@^4.0.0, lodash@^4.1.0, lodash@^4.11.2, lodash@^4.14.0, lodash@^4.2.1, lodash@^4.3.0:
+lodash@4, lodash@^4.0.0, lodash@^4.1.0, lodash@^4.11.2, lodash@^4.14.0, lodash@^4.2.1, lodash@^4.3.0:
+  version "4.17.4"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+
+lodash@4.17.2:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
 
@@ -3541,8 +3545,8 @@ sprintf-js@^1.0.3:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
 
 sshpk@^1.7.0:
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/sshpk/-/sshpk-1.10.1.tgz#30e1a5d329244974a1af61511339d595af6638b0"
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/sshpk/-/sshpk-1.10.2.tgz#d5a804ce22695515638e798dbe23273de070a5fa"
   dependencies:
     asn1 "~0.2.3"
     assert-plus "^1.0.0"

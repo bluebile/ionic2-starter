@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Adapter, Authentication } from '@ramonornela/authentication';
+import { Adapter, Authentication } from '@mbamobi/authentication';
 import { Events } from 'ionic-angular';
 
 export const LoginEvents = {

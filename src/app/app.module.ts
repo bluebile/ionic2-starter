@@ -5,11 +5,11 @@ import { AppConfig } from './app.config';
 import { Env, ProviderEnv } from './app.env';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { Adapter, AuthenticationHttpModule, HttpAdapter } from '@ramonornela/authentication';
-import { ConfigurationModule } from '@ramonornela/configuration';
-import { DefaultPlugins, HttpModule, ThrowExceptionStatusToken } from '@ramonornela/http';
-import { HttpPluginsIonicModule } from '@ramonornela/http-plugins-ionic';
-import { UrlResolverModule } from '@ramonornela/url-resolver';
+import { Adapter, AuthenticationHttpModule, HttpAdapter } from '@mbamobi/authentication';
+import { ConfigurationModule } from '@mbamobi/configuration';
+import { DefaultPlugins, HttpModule, ThrowExceptionStatusToken } from '@mbamobi/http';
+import { HttpPluginsIonicModule } from '@mbamobi/http-plugins-ionic';
+import { UrlResolverModule } from '@mbamobi/url-resolver';
 import { TextMaskModule } from 'angular2-text-mask';
 import { IonicApp, IonicModule } from 'ionic-angular';
 
