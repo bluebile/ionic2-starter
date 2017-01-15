@@ -1,3 +1,4 @@
+import { ErroConectividadePage } from './erro/erro-conectividade/erro-conectividade';
 import { HomePage } from './home/home';
 import { LoginPage } from './login/login';
 import { TermoPage } from './termo/termo';
@@ -10,7 +11,8 @@ import { TermoPage } from './termo/termo';
 export const Pages: any[] = [
   HomePage,
   LoginPage,
-  TermoPage
+  TermoPage,
+  ErroConectividadePage
 ];
 
 export const Home = HomePage;
@@ -20,5 +22,6 @@ export const Termo = TermoPage;
 export {
   HomePage,
   LoginPage,
-  TermoPage
+  TermoPage,
+  ErroConectividadePage
 };

@@ -1,14 +1,18 @@
 import { EnvToken } from '../app/app.env';
+import { ErroConectividadePage, Login } from '../pages/pages';
 import { ErrorHandler as ErrorHandlerAngular, forwardRef, Inject, Injectable, } from '@angular/core';
 import { Response } from '@angular/http';
+import { Authentication } from '@mbamobi/authentication';
 import { HttpException } from '@mbamobi/http';
 import { NoConnectionException } from '@mbamobi/http-plugins-ionic';
-import { IonicErrorHandler, ToastController } from 'ionic-angular';
+import { IonicErrorHandler, ModalController, ToastController } from 'ionic-angular';
 
 @Injectable()
 export class ErrorHandler extends IonicErrorHandler implements ErrorHandlerAngular {
 
   constructor(
+    private auth: Authentication,
+    private modalCtrl: ModalController,
     private toastCtrl: ToastController,
     @Inject(forwardRef(() => EnvToken)) private env: string
   ) {
@@ -28,7 +32,17 @@ export class ErrorHandler extends IonicErrorHandler implements ErrorHandlerAngul
     }
 
     if (originalError instanceof NoConnectionException) {
-      let toast = this.toastCtrl.create({
+      if (!Login) {
+        this.createModalConectivity();
+        return;
+      }
+
+      if (this.auth.has()) {
+        this.createModalConectivity();
+        return;
+      }
+
+      const toast = this.toastCtrl.create({
         message: 'Sem conexão',
         duration: 4000,
         position: 'top'
@@ -38,7 +52,7 @@ export class ErrorHandler extends IonicErrorHandler implements ErrorHandlerAngul
     }
 
     if (originalError instanceof HttpException) {
-      let toast = this.toastCtrl.create({
+      const toast = this.toastCtrl.create({
         message: originalError.message,
         duration: 4000,
         position: 'top'
@@ -50,6 +64,11 @@ export class ErrorHandler extends IonicErrorHandler implements ErrorHandlerAngul
     if ('dev' === this.env) {
       super.handleError(error);
     }
+  }
+
+  private createModalConectivity() {
+    const modal = this.modalCtrl.create(ErroConectividadePage);
+    modal.present({animate: false});
   }
 }
 
