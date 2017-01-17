@@ -5,7 +5,7 @@ import { AppConfig } from './app.config';
 import { Env, ProviderEnv } from './app.env';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { Adapter, AuthenticationHttpModule, HttpAdapter } from '@mbamobi/authentication';
+import { AuthenticationHttpModule } from '@mbamobi/authentication';
 import { ConfigurationModule } from '@mbamobi/configuration';
 import { DefaultPlugins, HttpModule, ThrowExceptionStatusToken } from '@mbamobi/http';
 import { HttpPluginsIonicModule } from '@mbamobi/http-plugins-ionic';
@@ -35,8 +35,7 @@ export function extraMessageError() {};
     Providers,
     { provide: ThrowExceptionStatusToken, useValue: extraMessageError },
     { provide: LOCALE_ID, useValue: 'pt-BR' },
-    ProviderEnv,
-    { provide: Adapter, useClass: HttpAdapter }
+    ProviderEnv
   ],
   bootstrap: [IonicApp],
   entryComponents: [
