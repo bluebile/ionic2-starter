@@ -24,17 +24,16 @@ export class MyApp {
   }
 
   private showHome() {
+    let page: any = Home;
     if (Onboard) {
-      this.nav.setRoot(Onboard);
-      return;
+      page = Onboard;
     } else if (Login) {
       if (!this.auth.has()) {
-        this.nav.setRoot(Login);
-        return;
+        page = Login;
       }
    }
 
-    this.nav.setRoot(Home).then(() => {
+    this.nav.setRoot(page).then(() => {
       Splashscreen.hide();
     });
   }
