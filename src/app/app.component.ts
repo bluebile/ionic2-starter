@@ -1,4 +1,4 @@
-import { Home, Login } from '../pages/pages';
+import { Home, Login, Onboard } from '../pages/pages';
 import { Component, ViewChild } from '@angular/core';
 import { Authentication } from '@mbamobi/authentication';
 import { Nav, Platform } from 'ionic-angular';
@@ -24,12 +24,16 @@ export class MyApp {
   }
 
   private showHome() {
-    if (Login) {
-      if (!this.auth.has()) {
-        this.nav.setRoot(Login);
-        return;
-      }
+    if (Onboard) {
+      this.nav.setRoot(Onboard);
+      return;
     }
+    else if (Login) {
+        if (!this.auth.has()) {
+          this.nav.setRoot(Login);
+          return;
+        }
+      }
 
     this.nav.setRoot(Home).then(() => {
       Splashscreen.hide();

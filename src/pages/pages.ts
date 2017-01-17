@@ -2,6 +2,7 @@ import { ErroConectividadePage } from './erro/erro-conectividade/erro-conectivid
 import { HomePage } from './home/home';
 import { LoginPage } from './login/login';
 import { TermoPage } from './termo/termo';
+import { OnboardPage } from './onboard/onboard';
 
 /**
  * The Pages array lists all of the pages we want to use in our app.
@@ -12,16 +13,19 @@ export const Pages: any[] = [
   HomePage,
   LoginPage,
   TermoPage,
-  ErroConectividadePage
+  ErroConectividadePage,
+  OnboardPage
 ];
 
 export const Home = HomePage;
 export const Login = LoginPage;
 export const Termo = TermoPage;
+export const Onboard = OnboardPage;
 
 export {
   HomePage,
   LoginPage,
   TermoPage,
-  ErroConectividadePage
+  ErroConectividadePage,
+  OnboardPage
 };
