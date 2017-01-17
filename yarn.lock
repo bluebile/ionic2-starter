@@ -93,8 +93,8 @@
     rxjs "5.0.0-beta.12"
 
 "@mbamobi/authentication@nightly":
-  version "0.0.1-nightly.20170117T081218Z.2268bc5"
-  resolved "https://registry.yarnpkg.com/@mbamobi/authentication/-/authentication-0.0.1-nightly.20170117T081218Z.2268bc5.tgz#354a0f5d20ede0eaa48c80029c2b308a9ec30a2d"
+  version "0.0.1-nightly.20170117T162222Z.441c30d"
+  resolved "https://registry.yarnpkg.com/@mbamobi/authentication/-/authentication-0.0.1-nightly.20170117T162222Z.441c30d.tgz#7b2b86faa43c949574c75c2164fd62fb8eb06603"
   dependencies:
     "@ramonornela/jsonpath" "0.2.10"
 
@@ -2092,7 +2092,7 @@ is-obj@^1.0.0:
 
 is-posix-bracket@^0.1.0:
   version "0.1.1"
-  resolved "https://registry.yarnpkg.com/is-posix-bracket/-/is-posix-bracket-0.1.1.tgz#3334dc79774368e92f016e6fbc0a88f5cd6e6bc4"
+  resolved "http://registry.npmjs.org/is-posix-bracket/-/is-posix-bracket-0.1.1.tgz#3334dc79774368e92f016e6fbc0a88f5cd6e6bc4"
 
 is-primitive@^2.0.0:
   version "2.0.0"
@@ -3480,8 +3480,8 @@ source-map-support@^0.3.1:
     source-map "0.1.32"
 
 source-map-support@^0.4.0:
-  version "0.4.9"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.9.tgz#45eaa04f067e049d987b27599ed014a37750aaff"
+  version "0.4.10"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.10.tgz#d7b19038040a14c0837a18e630a196453952b378"
   dependencies:
     source-map "^0.5.3"
 
