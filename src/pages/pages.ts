@@ -22,10 +22,11 @@ export const Login = LoginPage;
 export const Termo = TermoPage;
 export const Onboard = OnboardPage;
 
+export * from './onboard/onboard';
+export * from './termo/termo';
+
 export {
   HomePage,
   LoginPage,
-  TermoPage,
   ErroConectividadePage,
-  OnboardPage
 };

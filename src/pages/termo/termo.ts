@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { App, NavParams } from 'ionic-angular';
 
-export const KEY = '_termo';
+export const KeyStorageTermo = '_termo';
 
 @Component({
   selector: 'page-termo',
@@ -23,7 +23,7 @@ export class TermoPage {
   }
 
   ngAfterViewInit() {
-    this.storage.get(KEY).then((data) => {
+    this.storage.get(KeyStorageTermo).then((data) => {
       if (data === true) {
         this.hiddenButton = true;
       }
@@ -31,7 +31,7 @@ export class TermoPage {
   }
 
   accept() {
-    this.storage.set(KEY, true);
+    this.storage.set(KeyStorageTermo, true);
     this.app.getActiveNav().setRoot(Home);
   }
 }

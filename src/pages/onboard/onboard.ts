@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { App } from 'ionic-angular';
 
-export const KEY = '_onboard';
+export const KeyStorageOnboard = '_onboard';
 
 @Component({
   selector: 'page-onboard',
@@ -29,15 +29,8 @@ export class OnboardPage {
 
   constructor(private app: App, private storage: Storage) {}
 
-  ngAfterViewInit() {
-    this.storage.get(KEY).then((data) => {
-      if (data === true) {
-        this.app.getActiveNav().setRoot(Login);
-      }
-    });
-  }
-
   close() {
+    this.storage.set(KeyStorageOnboard, true);
     this.app.getActiveNav().setRoot(Login);
   }
 }

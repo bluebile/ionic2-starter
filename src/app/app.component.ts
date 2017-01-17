@@ -1,5 +1,6 @@
-import { Home, Login, Onboard } from '../pages/pages';
+import { Home, KeyStorageOnboard, Login, Onboard } from '../pages/pages';
 import { Component, ViewChild } from '@angular/core';
+import { Storage } from '@ionic/storage';
 import { Authentication } from '@mbamobi/authentication';
 import { Nav, Platform } from 'ionic-angular';
 import { Splashscreen, StatusBar } from 'ionic-native';
@@ -11,7 +12,11 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
 
-  constructor(private platform: Platform, private auth: Authentication) {
+  constructor(
+    private auth: Authentication,
+    private platform: Platform,
+    private storage: Storage,
+  ) {
     this.platform.ready().then(() => {
       StatusBar.styleDefault();
     });
@@ -25,9 +30,18 @@ export class MyApp {
 
   private showHome() {
     let page: any = Home;
+
     if (Onboard) {
-      page = Onboard;
-    } else if (Login) {
+      this.storage.get(KeyStorageOnboard).then((data) => {
+        if (!data) {
+          this.nav.setRoot(Onboard).then(() => {
+            Splashscreen.hide();
+          });
+        }
+      });
+    }
+
+    if (Login) {
       if (!this.auth.has()) {
         page = Login;
       }
