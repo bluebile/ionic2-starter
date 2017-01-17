@@ -1,8 +1,8 @@
 import { ErroConectividadePage } from './erro/erro-conectividade/erro-conectividade';
 import { HomePage } from './home/home';
 import { LoginPage } from './login/login';
-import { TermoPage } from './termo/termo';
 import { OnboardPage } from './onboard/onboard';
+import { TermoPage } from './termo/termo';
 
 /**
  * The Pages array lists all of the pages we want to use in our app.

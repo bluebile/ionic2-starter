@@ -27,13 +27,12 @@ export class MyApp {
     if (Onboard) {
       this.nav.setRoot(Onboard);
       return;
-    }
-    else if (Login) {
-        if (!this.auth.has()) {
-          this.nav.setRoot(Login);
-          return;
-        }
+    } else if (Login) {
+      if (!this.auth.has()) {
+        this.nav.setRoot(Login);
+        return;
       }
+   }
 
     this.nav.setRoot(Home).then(() => {
       Splashscreen.hide();
