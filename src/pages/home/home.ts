@@ -1,5 +1,5 @@
+import { User } from '../../providers/providers';
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
 
 @Component({
     selector: 'home-page',
@@ -7,5 +7,13 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(private user: User) {}
+
+  logout() {
+    this.user.confirmLogout().then(() => {
+      // confirmando
+    }).catch(() => {
+      // clicado no botao nao
+    });
+  }
 }

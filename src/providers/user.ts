@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Adapter, Authentication } from '@mbamobi/authentication';
-import { Events } from 'ionic-angular';
+import { AlertController, Events } from 'ionic-angular';
 
 export const UserEvents = {
   LOGIN_SUCCESS: 'user.login.success',
@@ -12,6 +12,7 @@ export const UserEvents = {
 export class User {
   constructor(
     private authAdapter: Adapter,
+    private alertController: AlertController,
     private auth: Authentication,
     private events: Events) {}
 
@@ -32,8 +33,31 @@ export class User {
   }
 
   logout() {
-    this.auth.clear();
     this.events.publish(UserEvents.LOGOUT, this.getData());
+    this.auth.clear();
+  }
+
+  confirmLogout() {
+    return new Promise((resolve, reject) => {
+      this.alertController.create({
+        title: null,
+        message: 'Tem certeza que deseja sair do aplicativo?',
+        buttons: [
+          {
+            text: 'Não',
+            role: 'cancel',
+            handler: () => reject
+          },
+          {
+            text: 'Sim',
+            handler: () => {
+              this.logout();
+              resolve();
+            }
+          }
+        ]
+      }).present();
+    });
   }
 
   getData(): Object {
