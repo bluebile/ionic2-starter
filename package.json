@@ -22,7 +22,7 @@
     "postinstall": "node ./scripts/app/create.env",
     "preionic:build": "node ./scripts/app/replace.env",
     "preionic:serve": "node ./scripts/app/replace.env",
-    "prepush": "npm run lint",
+    "prepush": "npm run lint --bailOnLintError true",
     "server:init": "json-server ./server/router.js --watch --host localhost"
   },
   "config": {
@@ -58,7 +58,7 @@
     "zone.js": "0.6.26"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "0.0.48",
+    "@ionic/app-scripts": "nightly",
     "codelyzer": "2.0.0-beta.4",
     "commitizen": "^2.8.6",
     "commitplease": "2.6.1",
