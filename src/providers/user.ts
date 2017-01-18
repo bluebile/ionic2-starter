@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { Adapter, Authentication } from '@mbamobi/authentication';
 import { Events } from 'ionic-angular';
 
-export const LoginEvents = {
-  SUCCESS: 'login.success',
-  FAILURE: 'login.failure'
+export const UserEvents = {
+  LOGIN_SUCCESS: 'user.login.success',
+  LOGIN_FAILURE: 'user.login.failure',
+  LOGOUT: 'user.logout'
 };
 
 @Injectable()
@@ -21,10 +22,10 @@ export class User {
 
     return new Promise((resolve, reject) => {
       this.auth.authenticate().then((result) => {
-        this.events.publish(LoginEvents.SUCCESS, result);
+        this.events.publish(UserEvents.LOGIN_SUCCESS, result);
         resolve(result);
       }).catch((err) => {
-        this.events.publish(LoginEvents.FAILURE, err);
+        this.events.publish(UserEvents.LOGIN_FAILURE, err);
         reject(err);
       });
     });
@@ -32,9 +33,10 @@ export class User {
 
   logout() {
     this.auth.clear();
+    this.events.publish(UserEvents.LOGOUT, this.getData());
   }
 
-  getData() {
+  getData(): Object {
     return this.auth.getData();
   }
 }
