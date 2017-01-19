@@ -1,14 +1,14 @@
 // TODO link para documentação do URL resolver com docs e exemplos
 export const AppRoutes = {
   '_defaults': {
-    'host': 'http://localhost:8080/rest/',
+    'host': 'http://192.168.10.72:8080/rest/',
   },
   'exemplo': {
     'url': 'exemplo',
     'method': 'GET'
   },
   'login': {
-    'url': 'http://localhost:3000/auth'
+    'url': 'http://192.168.10.72:3000/auth'
   }
 };
 

@@ -23,7 +23,7 @@
     "preionic:build": "node ./scripts/app/replace.env",
     "preionic:serve": "node ./scripts/app/replace.env",
     "prepush": "npm run lint --bailOnLintError true",
-    "server:init": "json-server ./server/router.js --watch --host localhost"
+    "server:init": "json-server ./server/router.js --watch"
   },
   "config": {
     "ionic_bundler": "rollup",
