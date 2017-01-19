@@ -1,7 +1,5 @@
-import { CardPage } from './card/card';
 import { ErroConectividadePage } from './erro/erro-conectividade/erro-conectividade';
-import { HomePage } from './home/home';
-import { ListPage } from './list/list';
+import { CardPage, HomePage, ListPage } from './home';
 import { LoginPage } from './login/login';
 import { OnboardPage } from './onboard/onboard';
 import { ProfilePage } from './profile/profile';
