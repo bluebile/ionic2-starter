@@ -1,5 +1,7 @@
-import { User } from '../../providers/providers';
 import { Component } from '@angular/core';
+import { ListPage } from "../list/list";
+import { CardPage } from "../card/card";
+import { ProfilePage } from "../profile/profile";
 
 @Component({
     selector: 'home-page',
@@ -7,13 +9,13 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor(private user: User) {}
+  private tabCard: any;
+  private tabList: any;
+  private tabProfile: any;
 
-  logout() {
-    this.user.confirmLogout().then(() => {
-      // confirmando
-    }).catch(() => {
-      // clicado no botao nao
-    });
+  constructor() {
+    this.tabCard = CardPage;
+    this.tabList = ListPage;
+    this.tabProfile = ProfilePage;
   }
 }

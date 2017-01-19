@@ -3,6 +3,9 @@ import { HomePage } from './home/home';
 import { LoginPage } from './login/login';
 import { OnboardPage } from './onboard/onboard';
 import { TermoPage } from './termo/termo';
+import { ListPage } from './list/list';
+import { CardPage } from './card/card';
+import { ProfilePage } from "./profile/profile";
 
 /**
  * The Pages array lists all of the pages we want to use in our app.
@@ -14,13 +17,20 @@ export const Pages: any[] = [
   LoginPage,
   TermoPage,
   ErroConectividadePage,
-  OnboardPage
+  OnboardPage,
+  ListPage,
+  CardPage,
+  ProfilePage
 ];
 
 export const Home = HomePage;
 export const Login = LoginPage;
 export const Termo = TermoPage;
 export const Onboard = OnboardPage;
+export const List = ListPage;
+export const Card = CardPage;
+export const Profile = ProfilePage;
+
 
 export * from './onboard/onboard';
 export * from './termo/termo';
@@ -29,4 +39,7 @@ export {
   HomePage,
   LoginPage,
   ErroConectividadePage,
+  ListPage,
+  CardPage,
+  ProfilePage
 };
