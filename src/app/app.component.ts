@@ -24,30 +24,42 @@ export class MyApp {
 
   ngAfterViewInit() {
     this.platform.ready().then(() => {
-      this.showHome();
+      this.openApp();
     });
   }
 
-  private showHome() {
-    let page: any = Home;
-
+  openApp() {
     if (Onboard) {
       this.storage.get(KeyStorageOnboard).then((data) => {
         if (!data) {
           this.nav.setRoot(Onboard).then(() => {
             Splashscreen.hide();
           });
+        } else {
+          this.checkLogin();
         }
       });
+    } else {
+      this.checkLogin();
     }
+  }
 
+  checkLogin() {
     if (Login) {
       if (!this.auth.has()) {
-        page = Login;
+        this.nav.setRoot(Login).then(() => {
+          Splashscreen.hide();
+        });
+      } else {
+        this.openHome();
       }
-   }
+    } else {
+      this.openHome();
+    }
+  }
 
-    this.nav.setRoot(page).then(() => {
+  openHome() {
+    this.nav.setRoot(Home).then(() => {
       Splashscreen.hide();
     });
   }

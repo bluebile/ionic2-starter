@@ -1,6 +1,7 @@
-import { Login } from '../pages';
+import { Home, Login } from '../pages';
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { Authentication } from '@mbamobi/authentication';
 import { App } from 'ionic-angular';
 
 export const KeyStorageOnboard = '_onboard';
@@ -27,10 +28,23 @@ export class OnboardPage {
     image: 'assets/img/ica-slidebox-img-3.png'
   }];
 
-  constructor(private app: App, private storage: Storage) {}
+  constructor(private app: App, private storage: Storage, private auth: Authentication) {}
+
+  openHome() {
+    this.app.getActiveNav().setRoot(Home);
+  }
 
   close() {
     this.storage.set(KeyStorageOnboard, true);
-    this.app.getActiveNav().setRoot(Login);
+
+    if (Login) {
+      if (!this.auth.has()) {
+        this.app.getActiveNav().setRoot(Login);
+      } else {
+        this.openHome();
+      }
+    } else {
+      this.openHome();
+    }
   }
 }
