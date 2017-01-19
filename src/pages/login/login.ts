@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Storage } from '@ionic/storage';
 import { App, LoadingController, ToastController } from 'ionic-angular';
+import { RecoveryPasswordPage } from "../recoveryPassword/recoveryPassword";
 
 @Component({
   selector: 'page-login',
@@ -85,5 +86,9 @@ export class LoginPage {
 
       this.app.getActiveNav().setRoot(Termo);
     });
+  }
+
+  recoveyPassword() {
+    this.app.getActiveNav().setRoot(RecoveryPasswordPage);
   }
 }
