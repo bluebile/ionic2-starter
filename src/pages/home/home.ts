@@ -1,17 +1,17 @@
+import { CardPage } from '../card/card';
+import { ListPage } from '../list/list';
+import { ProfilePage } from '../profile/profile';
 import { Component } from '@angular/core';
-import { ListPage } from "../list/list";
-import { CardPage } from "../card/card";
-import { ProfilePage } from "../profile/profile";
 
 @Component({
-    selector: 'home-page',
-    templateUrl: 'home.html'
+  selector: 'home-page',
+  templateUrl: 'home.html'
 })
 export class HomePage {
 
-  private tabCard: any;
-  private tabList: any;
-  private tabProfile: any;
+  tabCard: any;
+  tabList: any;
+  tabProfile: any;
 
   constructor() {
     this.tabCard = CardPage;

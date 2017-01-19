@@ -1,11 +1,11 @@
 import { User } from '../../providers/providers';
 import { Masks, Validators as ValidatorsInternal } from '../../util';
 import { Home, Termo } from '../pages';
+import { RecoveryPasswordPage } from '../recoveryPassword/recoveryPassword';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Storage } from '@ionic/storage';
 import { App, LoadingController, ToastController } from 'ionic-angular';
-import { RecoveryPasswordPage } from "../recoveryPassword/recoveryPassword";
 
 @Component({
   selector: 'page-login',

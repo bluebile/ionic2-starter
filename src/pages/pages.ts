@@ -1,12 +1,12 @@
+import { CardPage } from './card/card';
 import { ErroConectividadePage } from './erro/erro-conectividade/erro-conectividade';
 import { HomePage } from './home/home';
+import { ListPage } from './list/list';
 import { LoginPage } from './login/login';
 import { OnboardPage } from './onboard/onboard';
+import { ProfilePage } from './profile/profile';
+import { RecoveryPasswordPage } from './recoveryPassword/recoveryPassword';
 import { TermoPage } from './termo/termo';
-import { ListPage } from './list/list';
-import { CardPage } from './card/card';
-import { ProfilePage } from "./profile/profile";
-import { RecoveryPasswordPage } from "./recoveryPassword/recoveryPassword";
 
 /**
  * The Pages array lists all of the pages we want to use in our app.
