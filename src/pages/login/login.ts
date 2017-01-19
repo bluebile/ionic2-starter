@@ -1,6 +1,6 @@
 import { User } from '../../providers/providers';
 import { Masks, Validators as ValidatorsInternal } from '../../util';
-import { Home, KeyStorageTermo, Termo } from '../pages';
+import { Home, Termo } from '../pages';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Storage } from '@ionic/storage';
@@ -77,7 +77,7 @@ export class LoginPage {
   }
 
   showTermo() {
-    this.storage.get(KeyStorageTermo).then((data) => {
+    this.storage.get('_termo').then((data) => {
       if (data === true) {
         this.app.getActiveNav().setRoot(Home);
         return;
