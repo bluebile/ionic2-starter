@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { Login } from "../pages";
 import { User } from '../../providers/providers';
+import { Login } from "../pages";
+import { Component } from '@angular/core';
 import { App } from 'ionic-angular';
 
 @Component({
@@ -9,7 +9,7 @@ import { App } from 'ionic-angular';
 })
 export class ProfilePage {
 
-	constructor(private user: User, private app: App,) {
+	constructor(private app: App, private user: User) {
 	}
 
 	logout() {
