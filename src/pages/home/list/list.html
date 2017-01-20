@@ -1,18 +1,21 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title text>
-      Lista
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title text>
+            Lista
+        </ion-title>
+    </ion-navbar>
 </ion-header>
-
 <ion-content>
-	
-  <div>
-		<ion-card>
-			<ion-card-content>
-				Página com lista
-			</ion-card-content>
-		</ion-card>
-	</div>
+    <ion-card>
+        <ion-card-content>
+            Página com lista
+        </ion-card-content>
+    </ion-card>
+    <ion-list>
+        <ion-item *ngFor="let user of users">
+            <ion-avatar item-left><img src="http://lorempixel.com/100/100/people/"></ion-avatar>
+            <h2><b>{{user.nome}}</b></h2>
+            <h3>{{user.email}} - {{user.telefone}}</h3>
+        </ion-item>
+    </ion-list>
 </ion-content>
