@@ -1,18 +1,24 @@
 import { User } from '../../providers/providers';
+import { Login } from "../pages";
 import { Component } from '@angular/core';
+import { App } from 'ionic-angular';
 
 @Component({
-  selector: 'page-profile',
-  templateUrl: 'profile.html'
+	selector: 'page-profile',
+	templateUrl: 'profile.html'
 })
 export class ProfilePage {
-  constructor(private user: User) {}
 
-  logout() {
-    this.user.confirmLogout().then(() => {
-      // confirmando
-    }).catch(() => {
-      // clicado no botao nao
-    });
-  }
+	constructor(private user: User, private app: App,) {
+	}
+
+	logout() {
+		this.user.confirmLogout().then(() => {
+			this.app.getActiveNav().setRoot(Login);
+		}).catch(() => {
+			// clicado no botao nao
+		});
+	}
 }
+
+
