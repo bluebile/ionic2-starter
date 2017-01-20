@@ -3,7 +3,8 @@
         <div class="box-inputs">
             <ion-item [class.error]="!form.controls['cpf'].valid && submitAttempted">
                 <ion-label>CPF:</ion-label>
-                <ion-input type="tel" maxlength="14" [textMask]="{mask: mask, guide: false}" [formControl]="form.controls['cpf']"></ion-input>
+                <ion-input type="tel" maxlength="14" [textMask]="{mask: mask, guide: false}"
+                           [formControl]="form.controls['cpf']"></ion-input>
             </ion-item>
             <ion-item [class.error]="!form.controls['password'].valid && submitAttempted">
                 <ion-label>Senha:</ion-label>
@@ -11,10 +12,8 @@
             </ion-item>
             <ion-buttons end>
                 <button ion-button>ENTRAR</button>
+                <button ion-button small outline [navPush]="esqueciSenha">Esqueci minha senha</button>
             </ion-buttons>
         </div>
     </form>
-    <ion-buttons>
-        <button ion-button (click)="recoveyPassword()">Esqueci minha Senha</button>
-    </ion-buttons>
 </ion-content>
