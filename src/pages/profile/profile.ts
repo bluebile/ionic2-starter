@@ -1,5 +1,5 @@
 import { User } from '../../providers/providers';
-import { Login } from "../pages";
+import { Login } from '../pages';
 import { Component } from '@angular/core';
 import { App } from 'ionic-angular';
 
@@ -20,5 +20,3 @@ export class ProfilePage {
 		});
 	}
 }
-
-
