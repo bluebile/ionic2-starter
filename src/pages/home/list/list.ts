@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ListService } from '../../../providers/list.service'
+import { ListService } from '../../../providers/list.service';
 
 @Component({
   selector: 'page-list',
@@ -13,6 +13,6 @@ export class ListPage {
   constructor(public listService: ListService) {
       this.listService.getList().then( userList => {
           this.users = userList;
-      } )
+      });
   }
 }
