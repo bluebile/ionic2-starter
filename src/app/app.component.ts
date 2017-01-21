@@ -4,6 +4,8 @@ import { Storage } from '@ionic/storage';
 import { Authentication } from '@mbamobi/authentication';
 import { Nav, Platform } from 'ionic-angular';
 import { Splashscreen, StatusBar } from 'ionic-native';
+import { Observable } from 'rxjs/Observable';
+import { Observer } from 'rxjs/Observer';
 
 @Component({
   template: `<ion-nav></ion-nav>`
@@ -24,43 +26,44 @@ export class MyApp {
 
   ngAfterViewInit() {
     this.platform.ready().then(() => {
-      this.openApp();
-    });
-  }
-
-  openApp() {
-    if (Onboard) {
-      this.storage.get(KeyStorageOnboard).then((data) => {
-        if (!data) {
-          this.nav.setRoot(Onboard).then(() => {
-            Splashscreen.hide();
-          });
-        } else {
-          this.checkLogin();
-        }
-      });
-    } else {
-      this.checkLogin();
-    }
-  }
-
-  checkLogin() {
-    if (Login) {
-      if (!this.auth.has()) {
-        this.nav.setRoot(Login).then(() => {
-          Splashscreen.hide();
-        });
-      } else {
-        this.openHome();
-      }
-    } else {
       this.openHome();
-    }
+    });
   }
 
   openHome() {
-    this.nav.setRoot(Home).then(() => {
-      Splashscreen.hide();
+    this.choiceHome().subscribe((page: any) => {
+      this.nav.setRoot(page).then(() => {
+        Splashscreen.hide();
+      });
     });
+  }
+
+  choiceHome() {
+    return new Observable<any>((observer: Observer<any>) => {
+      if (Onboard) {
+        this.storage.get(KeyStorageOnboard).then((data) => {
+          if (!data) {
+            observer.next(Onboard);
+            observer.complete();
+          }
+
+          observer.next(this.choiceLoginOrHome());
+          observer.complete();
+        });
+      } else {
+        observer.next(this.choiceLoginOrHome());
+        observer.complete();
+      }
+    });
+  }
+
+  choiceLoginOrHome(): any {
+    if (Login) {
+      if (!this.auth.has()) {
+        return Login;
+      }
+    }
+
+    return Home;
   }
 }
