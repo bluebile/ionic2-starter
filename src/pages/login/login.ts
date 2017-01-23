@@ -89,6 +89,6 @@ export class LoginPage {
   }
 
   recoveyPassword() {
-    this.app.getActiveNav().setRoot(RecoveryPasswordPage);
+    this.app.getActiveNav().push( RecoveryPasswordPage);
   }
 }
