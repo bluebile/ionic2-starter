@@ -1,14 +1,16 @@
 // TODO link para documentação do URL resolver com docs e exemplos
-export const AppRoutes = {
+export const APP_ROUTES_DEV = {
   '_defaults': {
     'host': 'http://192.168.10.72:8080/rest/',
-  },
-  'exemplo': {
-    'url': 'exemplo',
-    'method': 'GET'
+    'variables': {
+      'mock': 'http://192.168.10.72:3000'
+    }
   },
   'login': {
-    'url': 'http://192.168.10.72:3000/auth'
+    'url': '{mock}/auth'
+  },
+  'usuarios': {
+    'url': '{mock}/usuarios'
   }
 };
 
@@ -24,11 +26,6 @@ export const AppConfig = {
     }
   },
   urlResolver: {
-    dev: AppRoutes,
-    'prod:dev': {
-      '_defaults': {
-        'host': 'http://example.com/rest/'
-      }
-    }
+    dev: APP_ROUTES_DEV
   }
 };

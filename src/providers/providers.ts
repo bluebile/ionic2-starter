@@ -3,8 +3,8 @@ import { User } from './user';
 import { ListService } from './list.service';
 
 export const Providers: any[] = [
-  ERROR_HANDLER,
-  User,
+    ERROR_HANDLER,
+    User,
     ListService
 ];
 

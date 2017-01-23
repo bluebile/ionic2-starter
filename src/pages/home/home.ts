@@ -1,6 +1,6 @@
 import { ProfilePage } from '../profile/profile';
 import { CardPage } from './card/card';
-import { ListPage } from './list/list';
+import { UserListPage } from './userlist/userList';
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,12 +10,12 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   tabCard: any;
-  tabList: any;
+  tabUserList: any;
   tabProfile: any;
 
   constructor() {
     this.tabCard = CardPage;
-    this.tabList = ListPage;
+    this.tabUserList = UserListPage;
     this.tabProfile = ProfilePage;
   }
 }
