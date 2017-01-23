@@ -12,10 +12,10 @@
         </ion-card-content>
     </ion-card>
     <ion-list>
-        <ion-item *ngFor="let user of users">
+        <button ion-item *ngFor="let user of users" (click)="detalharUsuario(user)">
             <ion-avatar item-left><img src="http://lorempixel.com/100/100/people/"></ion-avatar>
             <h2><b>{{user.nome}}</b></h2>
             <h3>{{user.endereco}}</h3>
-        </ion-item>
+        </button>
     </ion-list>
 </ion-content>
