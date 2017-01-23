@@ -11,8 +11,8 @@
                 <ion-input [formControl]="form.controls['password']" type="password"></ion-input>
             </ion-item>
             <ion-buttons end>
-                <button ion-button>ENTRAR</button>
-                <button ion-button small outline [navPush]="esqueciSenha">Esqueci minha senha</button>
+                <button ion-button type="submit">ENTRAR</button>
+                <input ion-button small outline type="button" value="Esqueci minha senha" (click)="recoveyPassword()">
             </ion-buttons>
         </div>
     </form>

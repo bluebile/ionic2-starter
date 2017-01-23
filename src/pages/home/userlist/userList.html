@@ -1,16 +1,11 @@
 <ion-header>
     <ion-navbar>
         <ion-title text>
-            Lista
+            Lista de usuários
         </ion-title>
     </ion-navbar>
 </ion-header>
 <ion-content>
-    <ion-card>
-        <ion-card-content>
-            Página com lista de usuários
-        </ion-card-content>
-    </ion-card>
     <ion-list>
         <button ion-item *ngFor="let user of users" (click)="detalharUsuario(user)">
             <ion-avatar item-left><img src="http://lorempixel.com/100/100/people/"></ion-avatar>
