@@ -18,16 +18,16 @@
 
         <ion-item>
             <ion-avatar item-left>
-                <img src="http://lorempixel.com/100/100/people/">
+                <img [src]="card.foto">
             </ion-avatar>
             <h2>{{card.nome}}</h2>
-            <p>{{card.dia}} de {{card.mes}}, {{card.ano}}</p>
+            <p>Telefone: {{card.telefonePrincipal}}</p>
         </ion-item>
 
-        <img src="http://lorempixel.com/1024/768/nature/" alt="">
+        <img [src]="card.cardFoto" alt="">
 
         <ion-card-content>
-            <p>{{card.descricao}}</p>
+            <p>{{card.biografia}}</p>
         </ion-card-content>
 
     </ion-card>

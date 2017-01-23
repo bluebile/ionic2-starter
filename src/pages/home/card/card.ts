@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
-import { CardService } from '../../../providers/card.service';
+import { UserService } from '../../../services/user/user';
 
 @Component({
     selector: 'page-card',
-    templateUrl: 'card.html'
+    templateUrl: 'card.html',
+    providers: [ UserService ]
 })
 export class CardPage {
 
-    cards: Array<any>;
+    cards: any;
 
-    constructor(public cardService: CardService) {
-        this.cardService.getList().then(cardList => {
-            this.cards = cardList;
+    constructor(public userService: UserService) {
+        this.userService.list().then(result => {
+            this.cards = result;
         });
     }
 }

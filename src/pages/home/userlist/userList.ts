@@ -14,15 +14,11 @@ export class UserListPage {
     constructor(public userService: UserService) {
 
         try {
-            this.userService.list().then((data) => {
-                this.users = data;
+            this.userService.list().then((result) => {
+                this.users = result;
             });
         } catch (erro) {
             console.log(erro);
         }
-
-        // this.listService.getList().then( userList => {
-        //     this.users = userList;
-        // });
     }
 }
