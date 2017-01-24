@@ -13,7 +13,7 @@ export class UserListPage {
 
     users: any;
 
-    constructor(public navCtrl: NavController ,public userService: UserService) {
+    constructor(public navCtrl: NavController, public userService: UserService) {
 
         try {
             this.userService.list().then((result) => {
@@ -28,5 +28,6 @@ export class UserListPage {
 
     detalharUsuario(user) {
         this.navCtrl.push(UserDetailPage, user);
+        console.log(user);
     }
 }
