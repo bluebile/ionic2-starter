@@ -7,7 +7,6 @@ import { RecoveryPasswordPage } from './recoveryPassword/recoveryPassword';
 import { TermoPage } from './termo/termo';
 import { UserDetailPage } from '../pages/userdetail/userDetail';
 
-
 /**
  * The Pages array lists all of the pages we want to use in our app.
  * We then take these pages and inject them into our NgModule so Angular
