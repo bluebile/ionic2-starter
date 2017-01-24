@@ -10,10 +10,10 @@
                 <ion-label>Senha:</ion-label>
                 <ion-input [formControl]="form.controls['password']" type="password"></ion-input>
             </ion-item>
-            <ion-buttons end>
-                <button ion-button type="submit">ENTRAR</button>
+            <ion-buttons>
+                <button ion-button block type="submit">ENTRAR</button>
+                <input ion-button clear type="button" class="input-recovery-password" value="Esqueci minha senha" (click)="recoveyPassword()">
             </ion-buttons>
-            <input ion-button small outline type="button" class="input-recovery-password" value="Esqueci minha senha" (click)="recoveyPassword()">
         </div>
     </form>
 </ion-content>
