@@ -1,6 +1,10 @@
 page-login {
 
-    /* Estilo do container das inputs */
+  .input-recovery-password {
+    border: 0px;
+    text-decoration: underline;
+    font-size: 9px;
+  }
 
   .box-inputs {
     width: 75%;
