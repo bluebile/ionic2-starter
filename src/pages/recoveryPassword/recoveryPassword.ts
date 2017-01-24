@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ToastController, NavController } from "ionic-angular";
+import { ToastController, NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-recovery-password',
@@ -11,8 +11,7 @@ export class RecoveryPasswordPage {
   /**
    * Função para recuperação de senha do usuário.
    */
-  recoveryPassoword()
-  {
+  recoveryPassoword() {
       let toast = this.toastCtrl.create({
         message: 'E-mail enviado com sucesso!',
         duration: 3000,
