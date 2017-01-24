@@ -1,5 +1,13 @@
 page-login {
 
+    ion-content {
+        background-image: url("../../assets/img/login-background.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+
+    }
+
     .input-recovery-password {
         border: none;
         text-decoration: underline;
@@ -8,10 +16,11 @@ page-login {
 
     .box-inputs {
         width: 75%;
-        margin: 20% auto;
+        margin: 60% auto;
         padding: 20px;
         border-radius: 5px;
-        box-shadow: 0 0 10px lighten(black, 70%);
+        background-color: white;
+        box-shadow: 0 0 10px lighten(black, 25%);
 
         ion-buttons {
             text-align: center;
