@@ -2,36 +2,38 @@ import { Home } from '../pages';
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { App, NavParams } from 'ionic-angular';
+import { GoogleAnalytics } from 'ionic-native';
 
 export const KeyStorageTermo = '_termo';
 
 @Component({
-  selector: 'page-termo',
-  templateUrl: 'termo.html'
+    selector: 'page-termo',
+    templateUrl: 'termo.html'
 })
 export class TermoPage {
-  hiddenButton: boolean = false;
+    hiddenButton: boolean = false;
 
-  constructor(
-    private app: App,
-    private storage: Storage,
-    navParams: NavParams
-  ) {
-    if (navParams.get('internal') === true) {
-      this.hiddenButton =  true;
+    constructor(private app: App,
+                private storage: Storage,
+                navParams: NavParams) {
+        if (navParams.get('internal') === true) {
+            this.hiddenButton = true;
+        }
     }
-  }
 
-  ngAfterViewInit() {
-    this.storage.get(KeyStorageTermo).then((data) => {
-      if (data === true) {
-        this.hiddenButton = true;
-      }
-    });
-  }
+    ngAfterViewInit() {
+        // Vamos registrar o evento de abertura de tela
+        GoogleAnalytics.trackView('Termo');
 
-  accept() {
-    this.storage.set(KeyStorageTermo, true);
-    this.app.getActiveNav().setRoot(Home);
-  }
+        this.storage.get(KeyStorageTermo).then((data) => {
+            if (data === true) {
+                this.hiddenButton = true;
+            }
+        });
+    }
+
+    accept() {
+        this.storage.set(KeyStorageTermo, true);
+        this.app.getActiveNav().setRoot(Home);
+    }
 }
