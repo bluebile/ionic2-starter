@@ -78,7 +78,7 @@
   <preference name="SplashScreenDelay" value="30000"/>
   <preference name="AutoHideSplashScreen" value="false"/>
   <preference name="SplashShowOnlyFirstTime" value="false"/>
-  <preference name="FadeSplashScreen" value="false"/>
+  <preference name="FadeSplashScreen" value="true"/>
   <preference name="ShowSplashScreenSpinner" value="false"/>
   <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine"/>
   <feature name="SplashScreen">
