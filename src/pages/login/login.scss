@@ -1,5 +1,12 @@
 page-login {
 
+    @mixin centerer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
     ion-content {
         background-image: url("../assets/img/login-background.png");
         background-repeat: no-repeat;
@@ -15,8 +22,8 @@ page-login {
     }
 
     .box-inputs {
+        @include centerer;
         width: 75%;
-        margin: 60% auto;
         padding: 20px;
         border-radius: 5px;
         background-color: white;
