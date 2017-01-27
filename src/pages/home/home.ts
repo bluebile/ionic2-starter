@@ -18,4 +18,10 @@ export class HomePage {
     this.tabUserList = UserListPage;
     this.tabProfile = ProfilePage;
   }
+
+
+  public logout()
+  {
+    console.log('Logout');
+  }
 }
