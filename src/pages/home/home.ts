@@ -15,7 +15,7 @@ export class HomePage {
 
     constructor() {
         this.tabCard = CardPage;
-        this.tabUserList = UserListPage;''
+        this.tabUserList = UserListPage;
         this.tabProfile = ProfilePage;
     }
 

@@ -39,7 +39,9 @@ export class MyApp {
   openHome() {
     this.choiceHome().subscribe((page: any) => {
       this.nav.setRoot(page).then(() => {
-        setTimeout(function(){Splashscreen.hide();}, 500)
+        setTimeout(function(){
+          Splashscreen.hide();
+        }, 500);
       });
     });
   }
