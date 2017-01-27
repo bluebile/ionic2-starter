@@ -1,7 +1,7 @@
 import { User } from '../../providers/providers';
 import { Component } from '@angular/core';
 import { App } from 'ionic-angular';
-import { Login } from "../pages";
+import { Login } from '../pages';
 
 @Component({
     selector: 'page-profile',
@@ -13,7 +13,7 @@ export class ProfilePage {
     }
 
     logout() {
-        this.user.confirmLogout().then(() => {
+        this.user.confirmLogout().then(() => {''
             this.app.getRootNav().setRoot(Login);
         }).catch(() => {
             // clicado no botao nao
