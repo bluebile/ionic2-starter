@@ -12,6 +12,8 @@ import { HttpPluginsIonicModule } from '@mbamobi/http-plugins-ionic';
 import { UrlResolverModule } from '@mbamobi/url-resolver';
 import { TextMaskModule } from 'angular2-text-mask';
 import { IonicApp, IonicModule } from 'ionic-angular';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { COMPONENTS } from '../components/index';
 
 // extração mensagem de erro do serviço
 export function extraMessageError() {};
@@ -19,6 +21,7 @@ export function extraMessageError() {};
 @NgModule({
   declarations: [
     MyApp,
+    COMPONENTS,
     Pages
   ],
   imports: [
@@ -37,6 +40,7 @@ export function extraMessageError() {};
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     ProviderEnv
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,

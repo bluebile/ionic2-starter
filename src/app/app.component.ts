@@ -3,7 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Authentication } from '@mbamobi/authentication';
 import { Nav, Platform } from 'ionic-angular';
-import { Splashscreen, StatusBar } from 'ionic-native';
+import { Splashscreen, StatusBar, GoogleAnalytics } from 'ionic-native';
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 
@@ -22,6 +22,12 @@ export class MyApp {
     this.platform.ready().then(() => {
       StatusBar.styleDefault();
     });
+
+    // troque o valor UA-90884928-1 por seu ID do google analytics
+    GoogleAnalytics.startTrackerWithId('UA-90884928-1')
+        .then(() => {
+          console.log('Google analytics is ready now');
+        }).catch(e => console.log('Error starting GoogleAnalytics', e));
   }
 
   ngAfterViewInit() {
@@ -33,7 +39,9 @@ export class MyApp {
   openHome() {
     this.choiceHome().subscribe((page: any) => {
       this.nav.setRoot(page).then(() => {
-        Splashscreen.hide();
+        setTimeout(function(){
+          Splashscreen.hide();
+        }, 500);
       });
     });
   }
