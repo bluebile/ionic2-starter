@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { ToastController, NavController } from 'ionic-angular';
 import { GoogleAnalytics } from 'ionic-native';
 
@@ -6,7 +6,7 @@ import { GoogleAnalytics } from 'ionic-native';
   selector: 'page-recovery-password',
   templateUrl: 'recoveryPassword.html'
 })
-export class RecoveryPasswordPage {
+export class RecoveryPasswordPage implements AfterViewInit {
   constructor(private toastCtrl: ToastController, private navCtrl: NavController) {}
 
   /**
@@ -14,22 +14,22 @@ export class RecoveryPasswordPage {
    */
   recoveryPassoword() {
 
-      // Vamos registrar evento de click no GoogleAnalytics
-      // TrackEvent(category, action, label, value, newSession)
-      GoogleAnalytics.trackEvent('Recuperação de senha', 'Click', 'Requisitou nova senha');
+    // Vamos registrar evento de click no GoogleAnalytics
+    // TrackEvent(category, action, label, value, newSession)
+    GoogleAnalytics.trackEvent('Recuperação de senha', 'Click', 'Requisitou nova senha');
 
-      let toast = this.toastCtrl.create({
-        message: 'E-mail enviado com sucesso!',
-        duration: 3000,
-        position: 'top'
-      });
+    const toast = this.toastCtrl.create({
+      message: 'E-mail enviado com sucesso!',
+      duration: 3000,
+      position: 'top'
+    });
 
-      toast.present();
-      this.navCtrl.pop();
+    toast.present();
+    this.navCtrl.pop();
   }
 
-    ngAfterViewInit() {
-        // Vamos registrar o evento de abertura de tela
-        GoogleAnalytics.trackView('Recuperação de senha');
-    }
+  ngAfterViewInit() {
+    // Vamos registrar o evento de abertura de tela
+    GoogleAnalytics.trackView('Recuperação de senha');
+  }
 }
