@@ -4,7 +4,7 @@ import { GoogleAnalytics } from 'ionic-native';
 
 @Component({
   selector: 'page-recovery-password',
-  templateUrl: 'recoveryPassword.html'
+  templateUrl: 'recovery-password.html'
 })
 export class RecoveryPasswordPage implements AfterViewInit {
   constructor(private toastCtrl: ToastController, private navCtrl: NavController) {}

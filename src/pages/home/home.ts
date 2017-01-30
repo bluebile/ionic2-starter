@@ -1,6 +1,6 @@
 import { ProfilePage } from '../profile/profile';
 import { CardPage } from './card/card';
-import { UserListPage } from './userlist/userList';
+import { UserListPage } from './user-list/user-list';
 import { Component } from '@angular/core';
 
 @Component({

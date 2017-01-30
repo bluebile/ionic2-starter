@@ -3,9 +3,9 @@ import { CardPage, HomePage, UserListPage } from './home';
 import { LoginPage } from './login/login';
 import { OnboardPage } from './onboard/onboard';
 import { ProfilePage } from './profile/profile';
-import { RecoveryPasswordPage } from './recoveryPassword/recoveryPassword';
+import { RecoveryPasswordPage } from './recovery-password/recovery-password';
 import { TermoPage } from './termo/termo';
-import { UserDetailPage } from '../pages/userdetail/userDetail';
+import { UserDetailPage } from './user-detail/user-detail';
 
 /**
  * The Pages array lists all of the pages we want to use in our app.

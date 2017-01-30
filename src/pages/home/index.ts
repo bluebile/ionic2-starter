@@ -1,3 +1,3 @@
 export * from './card/card';
 export * from './home';
-export * from './userlist/userList';
+export * from './user-list/user-list';

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { UserService } from '../../../services/user/user';
-import { UserDetailPage } from '../../../pages/userdetail/userDetail';
+import { UserDetailPage } from '../../user-detail/user-detail';
 import { UserModel } from '../../../services/user/user.model';
 
 @Component({
     selector: 'page-userlist',
-    templateUrl: 'userList.html',
+    templateUrl: 'user-list.html',
     providers: [ UserService ]
 })
 export class UserListPage implements OnInit {
