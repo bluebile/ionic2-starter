@@ -31,17 +31,17 @@
 #### Aba "DETALHES DO APP"
 - Abra o link da [PlayStore](https://play.google.com/apps/publish/signup/) e realize login
 - Click em '+ Criar app'
-![Tela 1](/docs/img/tela1.png)
+![Tela 1](/docs/img/android/tela1.png)
 - Defina o nome do app, e click em 'criar'""
 - Preencha a 'Breve descrição do aplicativo' e 'Descrição completa'
-![Tela 2](/docs/img/tela2.png)
+![Tela 2](/docs/img/android/tela2.png)
 - Adicione o icones e as imagens
 - Scrolle a tela em "RECURSOS GRÁFICOS", e faça a submissão um a um dos prints, clicando em "Adicionar captura de tela"
-![Tela 3](/docs/img/tela3.png)
+![Tela 3](/docs/img/android/tela3.png)
 - Adicione o icone e Gráfico de recursos (banner)
-![Tela 4](/docs/img/tela4.png)
+![Tela 4](/docs/img/android/tela4.png)
 - Preencha os demais dados com as informações citadas nos pré requisítos.
-![Tela 5](/docs/img/tela5.png)
+![Tela 5](/docs/img/android/tela5.png)
 
 #### Aba "APK"
 
