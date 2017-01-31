@@ -53,3 +53,9 @@ Este copia os fontes para a pasta desejada, mas há a necessidade de modificaç�
 Contributing
 
 See [CONTRIBUTING.md](https://github.com/mbamobi/ionic2.starter/blob/master/.github/CONTRIBUTING.md)
+
+## Enviando App's para as lojas
+
+- [Android](/docs/README_ANDROID_LOJA.md)
+- [IOS](/docs/README_IOS_LOJA.md)
+- [Windows Phone](/docs/README_WP_LOJA.md)

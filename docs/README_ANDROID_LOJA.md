@@ -1,5 +1,5 @@
 # Realizando submissão - PlayStore
-![PLAYSTORE](/img/playstore.png)
+![PLAYSTORE](/docs/img/playstore.png)
 
 ## Pré-requisítos
 
@@ -8,7 +8,7 @@
 - Gráfico de recursos - Banner - (1024px x 500px a JPG ou PNG de 24 bits (sem alfa))
 - Breve descrição do aplicativo (Texto com até 80 caracteres)
 - Descrição completa (Até 4000 caracteres)
-- Alguns detalhes do app: *Tipo de app, *Categoria, Site, *E-mail, E-mail, link de Política de Privacidade.
+- Alguns detalhes do app: *Tipo de app, *Categoria, Site, *E-mail, link de Política de Privacidade. (Itens com * são obrigatórios)
 - Não se esqueça de HOMOLOGAR os TEXTOS e IMAGENS junto ao clinte.
 - Não se esqueça de HOMOLOGAR o icone do app e a splash screen!
 
@@ -31,17 +31,17 @@
 #### Aba "DETALHES DO APP"
 - Abra o link da [PlayStore](https://play.google.com/apps/publish/signup/) e realize login
 - Click em '+ Criar app'
-![Tela 1](/img/tela1.png)
+![Tela 1](/docs/img/tela1.png)
 - Defina o nome do app, e click em 'criar'""
 - Preencha a 'Breve descrição do aplicativo' e 'Descrição completa'
-![Tela 2](/img/tela2.png)
+![Tela 2](/docs/img/tela2.png)
 - Adicione o icones e as imagens
 - Scrolle a tela em "RECURSOS GRÁFICOS", e faça a submissão um a um dos prints, clicando em "Adicionar captura de tela"
-![Tela 3](/img/tela3.png)
+![Tela 3](/docs/img/tela3.png)
 - Adicione o icone e Gráfico de recursos (banner)
-![Tela 4](/img/tela4.png)
+![Tela 4](/docs/img/tela4.png)
 - Preencha os demais dados com as informações citadas nos pré requisítos.
-![Tela 5](/img/tela5.png)
+![Tela 5](/docs/img/tela5.png)
 
 #### Aba "APK"
 
