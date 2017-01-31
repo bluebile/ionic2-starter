@@ -39,7 +39,7 @@
 - Scrolle a tela em "RECURSOS GRÁFICOS", e faça a submissão um a um dos prints, clicando em "Adicionar captura de tela"
 ![Tela 3](/docs/img/android/tela3.png)
 - Adicione o icone e Gráfico de recursos (banner)
-![Tela 4](/docs/img/android/tela4.png)
+![Tela 4](/docs/img/android/tela4a.png)
 - Preencha os demais dados com as informações citadas nos pré requisítos.
 ![Tela 5](/docs/img/android/tela5.png)
 
