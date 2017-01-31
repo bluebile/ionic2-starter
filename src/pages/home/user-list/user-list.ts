@@ -21,7 +21,7 @@ export class UserListPage implements OnInit {
      * @param user
      */
     detalharUsuario(user) {
-        this.navCtrl.push(UserDetailPage, user);
+        this.navCtrl.push(UserDetailPage, {user: user});
         console.log(user);
     }
 

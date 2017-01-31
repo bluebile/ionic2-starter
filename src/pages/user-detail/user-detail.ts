@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {UserModel} from "../../services/user/user.model";
 
 @Component({
   selector: 'page-user-detail',
@@ -7,6 +8,12 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class UserDetailPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  user: UserModel;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+     this.user  = this.navParams.get('user');
+     console.log(this.user);
+  }
 
 }
