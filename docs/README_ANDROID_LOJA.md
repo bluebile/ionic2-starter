@@ -85,7 +85,8 @@
 ![Tela 2](/docs/img/android/aba-preco-tela2.png)
 
 #### Enviar publicação
-- Feito todos os passos o botão "" fica disponível, click no botão e aquarde a revisão do APP!
+- Feito todos os passos o botão "Publicar app" fica disponível, click no botão e aquarde a revisão do APP!
+![Tela publicar app](/docs/img/android/publicar-app.png)
 * <b>Tempo para publicação:</b><br/>
     -<i> No android o app é avaliado em no máximo 1 dia (geralemnte em ate 3h)</i><br/>
     -<i> É raro ser recusado, mas pode ocorer, se for o caso é necessario ajustar o apk, realizar o mesmo processo e subir novamente</i><br/>
