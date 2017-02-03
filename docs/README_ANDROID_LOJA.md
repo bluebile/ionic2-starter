@@ -11,7 +11,7 @@
 - Alguns detalhes do app: *Tipo de app, *Categoria, Site, *E-mail, link de Política de Privacidade. (Itens com * são obrigatórios)
 - Não se esqueça de HOMOLOGAR os TEXTOS e IMAGENS junto ao clinte.
 - Não se esqueça de HOMOLOGAR o icone do app e a splash screen!
-- <b>PARAR ATUALIZAR VERSÃO,</b> o processo é igual a este, salvo bug ou melhoria(se for este o caso é necesário somente [enviar um novo APK](docs/README_ANDROID_LOJA.md#aba-apk)).
+- <b>PARAR ATUALIZAR VERSÃO,</b> o processo é igual a este, salvo bug ou melhoria(se for este o caso é necesário somente [enviar um novo APK](#aba-apk)).
 
 ## Realizando build realease
 ### Sencha
