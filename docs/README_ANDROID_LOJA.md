@@ -34,7 +34,7 @@
 ### Atenção
 -<i> Não se esqueça de mudar o id e version no "config.xml", de acordo com os dados de produção.</i>
 -<i> Para assinar APK manualmente:<br/>
-`$jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore SEU_CERTIFICADO.keystore android-release-unsigned.apk ALIAS_DO_PROJETO`</i>
+`$jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore SEU_CERTIFICADO.keystore android-release-unsigned.apk ALIAS_DO_PROJETO`</i><br/>
 -<i> Otimize o apk com o comando:<br/>
 `$ $ANDROID_HOME/sdk/build-tools/VERSÃO/zipalign -v 4 android-release-unsigned.apk HelloWorld.apk`.</i>
 
