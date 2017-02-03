@@ -1,4 +1,4 @@
-# Realizando submissão - PlayStore
+# Plubicação - PlayStore
 ![PLAYSTORE](/docs/img/playstore.png)
 
 ## Pré-requisítos
