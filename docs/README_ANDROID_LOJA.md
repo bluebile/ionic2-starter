@@ -1,4 +1,4 @@
-# Plubicação - PlayStore
+# Publicação - PlayStore
 ![PLAYSTORE](/docs/img/playstore.png)
 
 ## Pré-requisítos
@@ -27,7 +27,7 @@
 
 ### Ionic
 
-`$ inonic build --release production --buildConfig=CAMINHO_PARA_BUILD_JSON/build.json --release #realiza build`
+`$ npm run build:android --release --buildConfig=CAMINHO_PARA_BUILD_JSON/build.json --release #realiza build`
 * <b>OBS:</b><br/>
     -<i> Caso o build.json esteja na pasta raiz do projeto não é necessário o parametro "--buildConfig=CAMINHO_PARA_BUILD_JSON/build.json"</i>
 
