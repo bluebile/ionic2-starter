@@ -102,7 +102,8 @@
 - Após preenchidos os dados click em salvar.
 
 #### Pacotes
-- Arraste o XAP para a area especificada.
+- Gerando XAP [Veja](/docs/README_GERANDO_XAP.md)
+- Arraste o XAP para a area especificada, "Arraste seus pacotes para cá (.xap, .appx, .appxbundle, .appxupload)  ou procure seus arquivos."
 ![Tela Pacotes1](/docs/img/wp/wp-pacotes1.png)
 
 #### Enviar publicação
