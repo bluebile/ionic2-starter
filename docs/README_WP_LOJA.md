@@ -61,13 +61,13 @@
 #### Popriedades
 - Preencha o formulário
 ![Tela 7](/docs/img/wp/wp-tela7.png)
-##### Categoria e subcategoria
-- Preencha de acordo com o tipo do App</i><br/>
-##### Declarações do produto
-- Deixe como está, mas leia do que se trata ;)
-##### Requisitos do sistema
-- Marque os seguintes check's em Hardware mínimo: Tela touch, Câmera(se for o caso).
-- Click em "Salvar"
+* Categoria e subcategoria
+    - Preencha de acordo com o tipo do App</i><br/>
+* Declarações do produto
+    - Deixe como está, mas leia do que se trata ;)
+* Requisitos do sistema
+    - Marque os seguintes check's em Hardware mínimo: Tela touch, Câmera(se for o caso).
+    - Click em "Salvar"
 
 #### Classificações etárias
 ![Tela 8](/docs/img/wp/wp-tela8.png)
