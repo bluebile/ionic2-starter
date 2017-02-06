@@ -22,21 +22,18 @@
 
 `$ ./sencha app build android --env production --buildConfig=CAMINHO_PARA_BUILD_JSON/build.json --release #realiza build`
 
-* <b>OBS:</b><br/>
-    -<i> Não se esqueça de mudar o id e version no "config.xml", de acordo com os dados de produção.</i>
-
-### Ionic
+### Ionic 2
 
 `$ npm run build:android --release --buildConfig=CAMINHO_PARA_BUILD_JSON/build.json --release #realiza build`
-* <b>OBS:</b><br/>
-    -<i> Caso o build.json esteja na pasta raiz do projeto não é necessário o parametro "--buildConfig=CAMINHO_PARA_BUILD_JSON/build.json"</i>
 
 ### Atenção
+-<i> Caso o build.json esteja na pasta raiz do cordova (pasta cordova/ no sencha e a raiz no Ionic2) não é necessário o parametro "--buildConfig=CAMINHO_PARA_BUILD_JSON/build.json"</i>
 -<i> Não se esqueça de mudar o id e version no "config.xml", de acordo com os dados de produção.</i>
 -<i> Para assinar APK manualmente:<br/>
 `$jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore SEU_CERTIFICADO.keystore android-release-unsigned.apk ALIAS_DO_PROJETO`</i><br/>
 -<i> Otimize o apk com o comando:<br/>
 `$ $ANDROID_HOME/sdk/build-tools/VERSÃO/zipalign -v 4 android-release-unsigned.apk HelloWorld.apk`.</i>
+-<i> Sempre utilize versões fechadas(tag/realease) nos plugins do cordova que constam no "config.xml"(usar a master pode te gerar serios problemas!).</i>
 
 ### Iniciando Publicação na loja
 
