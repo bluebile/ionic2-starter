@@ -16,13 +16,13 @@
 ## Realizando build realease
 ### Sencha
 
-`$ ERASE /S /Q cordova/www/* `
-`$ ERASE /S /Q cordova/platforms/*`
-`$ ERASE /S /Q cordova/plugins/*`
-`$ ERASE /S /Q vendor/ `
-`$ ERASE /S /Q cordova/config_timestamp.xml #limpa temporários`
+`$ ERASE /S /Q cordova/www/* `<br/>
+`$ ERASE /S /Q cordova/platforms/*`<br/>
+`$ ERASE /S /Q cordova/plugins/*`<br/>
+`$ ERASE /S /Q vendor/ `<br/>
+`$ ERASE /S /Q cordova/config_timestamp.xml #limpa temporários`<br/>
 
-`$ npm install && node_modules\.bin\bower install #instala vendor`
+`$ npm install && node_modules\.bin\bower install #instala vendor`<br/>
 
 `$ sencha config -prop env=production then app build wp8 #realiza build`
 
@@ -32,7 +32,7 @@
 
 ### Atenção
 * <b>OBS:</b><br/>
-    -<i> Não se esqueça de mudar o id e version no "config.xml", de acordo com os dados de produção.</i>
+    -<i> Não se esqueça de mudar o id e version no "config.xml", de acordo com os dados de produção.</i><br/>
     -<i> Sempre utilize versões fechadas(tag/realease) nos plugins do cordova que constam no "config.xml"(usar a master pode te gerar serios problemas!).</i>
 
 
