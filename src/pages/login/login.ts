@@ -44,7 +44,7 @@ export class LoginPage {
         let msg = '';
 
         if (this.form.controls[ 'cpf' ].hasError('required')) {
-            msg = 'O CPF é obrigatório';
+            msg = 'O CPF é obrigatório!';
         } else if (this.form.controls[ 'cpf' ].hasError('invalid')) {
             msg = 'CPF inválido.';
         } else if (this.form.controls[ 'password' ].hasError('required')) {
