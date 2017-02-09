@@ -25,7 +25,7 @@ export class ErroConectividadePage {
   retry() {
     if (Network.type === 'none') {
       const toast = this.toastCtrl.create({
-        message: 'Verifique a conexão!',
+        message: 'Verifique a conexão!!!',
         duration: 3000,
         position: 'top'
       });
