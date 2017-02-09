@@ -13,7 +13,8 @@ import { UrlResolverModule } from '@mbamobi/url-resolver';
 import { TextMaskModule } from 'angular2-text-mask';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { COMPONENTS } from '../components/index';
+import { COMPONENTS } from '../components/index'
+import { MaskFix } from '../directives/input-mask-fix';
 
 // extração mensagem de erro do serviço
 export function extraMessageError() {};
@@ -31,7 +32,8 @@ export function extraMessageError() {};
     UrlResolverModule.initialize(),
     HttpModule.initialize(DefaultPlugins),
     HttpPluginsIonicModule,
-    AuthenticationHttpModule.initialize()
+    AuthenticationHttpModule.initialize(),
+    MaskFix
   ],
   providers: [
     Storage,
