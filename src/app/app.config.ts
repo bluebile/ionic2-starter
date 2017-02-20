@@ -27,5 +27,10 @@ export const AppConfig = {
   },
   urlResolver: {
     dev: APP_ROUTES_DEV
+  },
+  http: {
+    defaultOptions: {
+      timeout: 15000
+    }
   }
 };
