@@ -3,7 +3,7 @@
 ## Estilo de código
 
 Segue o padrão do [ionic2](https://www.npmjs.com/package/tslint-ionic-rules) e [angular-style](https://www.npmjs.com/package/codelyzer), veja o arquivo  com as regras especificadas para o projeto
-https://github.com/mbamobi/ionic2-starter/blob/master/tslint.json.
+[TSLint](/tslint.json).
 
 ## Formato das mensagens de commit
 

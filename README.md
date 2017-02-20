@@ -40,9 +40,7 @@ Este copia os fontes para a pasta desejada, mas há a necessidade de modificaç�
 - package.json
   - alterar os campos: name, homepage, description
 - README.md
- - customizar para a docs do projeto em questão e alterar link CONTRIBUTING.md
-- .github/CONTRIBUTING.md
- - alterar link tslint.json
+ - customizar para a docs do projeto em questão
 
 ## Gerando novo release
 
@@ -52,7 +50,7 @@ Este copia os fontes para a pasta desejada, mas há a necessidade de modificaç�
 
 Contributing
 
-See [CONTRIBUTING.md](https://github.com/mbamobi/ionic2.starter/blob/master/.github/CONTRIBUTING.md)
+See [CONTRIBUTING.md](/.github/CONTRIBUTING.md)
 
 ## Enviando App's para as lojas
 
