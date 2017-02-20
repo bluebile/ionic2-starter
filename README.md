@@ -8,7 +8,7 @@ Projeto starter com features comuns para os projetos.
 - Onboard
 
 # Executando o projeto
-```npm run install``` ou ```yarn install```
+```npm install``` ou ```yarn install```
 
 ### Iniciar Server mock
 ```npm run server:init```
