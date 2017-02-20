@@ -14,20 +14,12 @@
 - <b>PARAR ATUALIZAR VERSÃO,</b> o processo é igual a este, salvo bug ou melhoria(se for este o caso é necesário somente [enviar um novo APK](/docs/README_ANDROID_LOJA.md#aba-apk)).
 
 ## Realizando build realease
-### Sencha
-
-`$ rm -rf  cordova/www/* cordova/platforms/* cordova/plugins/* vendor/ cordova/config_timestamp.xml #limpa temporários`
-
-`$ bower install #instala vendor`
-
-`$ ./sencha app build android --env production --buildConfig=CAMINHO_PARA_BUILD_JSON/build.json --release #realiza build`
 
 ### Ionic 2
 
 `$ npm run build:android --release --buildConfig=CAMINHO_PARA_BUILD_JSON/build.json --release #realiza build`
 
 ### Atenção
--<i> Caso o build.json esteja na pasta raiz do cordova (pasta cordova/ no sencha e a raiz no Ionic2) não é necessário o parametro "--buildConfig=CAMINHO_PARA_BUILD_JSON/build.json"</i>
 -<i> Não se esqueça de mudar o id e version no "config.xml", de acordo com os dados de produção.</i>
 -<i> Para assinar APK manualmente:<br/>
 `$jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore SEU_CERTIFICADO.keystore android-release-unsigned.apk ALIAS_DO_PROJETO`</i><br/>
