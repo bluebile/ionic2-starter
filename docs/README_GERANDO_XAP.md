@@ -26,5 +26,5 @@
 ![Tela 8](/docs/img/wp/build/tela8.png)
 
 
-** OBS: Caso queira enviar para o dispositivo, mude de "Remote Machine" para "Device"
+** OBS: Caso queira enviar para o dispositivo, e realizar testes antes de subir, mude de "Remote Machine" para "Device"
  ![Tela 6](/docs/img/wp/build/tela6.png)
