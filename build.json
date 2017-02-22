@@ -9,8 +9,7 @@
 },
   "ios": {
     "debug": {
-      "codeSignIdentity": "iPhone Distribution: MBA TECNOLOGIA LTDA ME",
-      "provisioningProfile": ""
+      "developmentTeam": "685ED4TK2T"
     }        
   }
 }
