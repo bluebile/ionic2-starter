@@ -52,7 +52,7 @@
     "@mbamobi/http-plugins-ionic": "nightly",
     "@mbamobi/url-resolver": "1.0.1",
     "@ramonornela/json-server": "0.9.4",
-    "angular2-text-mask": "4.1.0",
+    "angular2-text-mask": "6.1.0",
     "intl": "1.2.5",
     "ionic-angular": "2.0.1",
     "ionic-native": "2.4.1",
