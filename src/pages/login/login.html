@@ -5,11 +5,9 @@
                 <ion-input type="tel" maxlength="14" [textMask]="{mask: mask, guide: false}"
                            [formControl]="form.controls['cpf']" placeholder="CPF"></ion-input>
             </ion-item>
-            <show-hide-container>
             <ion-item>
-                <ion-input [formControl]="form.controls['password']" type="password" placeholder="Senha" show-hide-input></ion-input>
+                <ion-input [formControl]="form.controls['password']" type="password" placeholder="Senha"></ion-input>
             </ion-item>
-            </show-hide-container>
             <ion-buttons margin-top>
                 <button ion-button block type="submit">ENTRAR</button>
                 <input ion-button clear type="button" class="input-recovery-password" value="Esqueci minha senha" (click)="recoveyPassword()">

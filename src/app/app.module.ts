@@ -4,6 +4,7 @@ import { MyApp } from './app.component';
 import { AppConfig } from './app.config';
 import { Env, ProviderEnv } from './app.env';
 import { LOCALE_ID, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { IonicStorageModule } from '@ionic/storage';
 import { AuthenticationHttpModule } from '@mbamobi/authentication';
 import { ConfigurationModule } from '@mbamobi/configuration';
@@ -12,8 +13,6 @@ import { HttpPluginsIonicModule } from '@mbamobi/http-plugins-ionic';
 import { UrlResolverModule } from '@mbamobi/url-resolver';
 import { TextMaskModule } from 'angular2-text-mask';
 import { IonicApp, IonicModule } from 'ionic-angular';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { COMPONENTS } from '../components';
 
 // extração mensagem de erro do serviço
 export function extraMessageError() {};
@@ -21,10 +20,10 @@ export function extraMessageError() {};
 @NgModule({
   declarations: [
     MyApp,
-    COMPONENTS,
     Pages
   ],
   imports: [
+    BrowserModule,
     IonicModule.forRoot(MyApp, AppConfig),
     IonicStorageModule.forRoot(),
     TextMaskModule,
@@ -41,7 +40,6 @@ export function extraMessageError() {};
     ProviderEnv,
     ProvidersNative
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,

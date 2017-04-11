@@ -12,8 +12,6 @@ export const KeyStorageOnboard = '_onboard';
 })
 export class OnboardPage {
 
-  slideOptions = { pager: true };
-
   slides = [{
     title: 'Bem vindo a aplicação Starter MBA!',
     description: 'A <b>Ionic-Starter</b> irá apresentar para você alguns exemplos de implementação de recursos ionic.',
