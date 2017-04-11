@@ -29,7 +29,6 @@
     "server:init": "json-server ./server/router.js --watch"
   },
   "config": {
-    "ionic_bundler": "rollup",
     "ionic_copy": "./scripts/app/copy.config.js",
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
