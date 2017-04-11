@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Http } from '@mbamobi/http';
 import { Events, Platform, ToastController, ViewController } from 'ionic-angular';
-import { Diagnostic, Network } from 'ionic-native';
+import { Diagnostic } from '@ionic-native/diagnostic';
+import { Network } from '@ionic-native/network';
 
 @Component({
   selector: 'erro-conectividade',
@@ -13,7 +14,9 @@ export class ErroConectividadePage {
   isIos: boolean;
 
   constructor(
+    private diagnostic: Diagnostic,
     private events: Events,
+    private network: Network,
     private http: Http,
     private toastCtrl: ToastController,
     private viewCtrl: ViewController,
@@ -23,7 +26,7 @@ export class ErroConectividadePage {
   }
 
   retry() {
-    if (Network.type === 'none') {
+    if (this.network.type === 'none') {
       const toast = this.toastCtrl.create({
         message: 'Verifique a conexão!!!',
         duration: 3000,
@@ -46,6 +49,6 @@ export class ErroConectividadePage {
   }
 
   settings() {
-    Diagnostic.switchToWifiSettings();
+    this.diagnostic.switchToWifiSettings();
   }
 }

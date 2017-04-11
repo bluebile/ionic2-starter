@@ -1,10 +1,10 @@
 import { Pages } from '../pages/pages';
-import { Providers } from '../providers/providers';
+import { Providers, ProvidersNative } from '../providers/providers';
 import { MyApp } from './app.component';
 import { AppConfig } from './app.config';
 import { Env, ProviderEnv } from './app.env';
 import { LOCALE_ID, NgModule } from '@angular/core';
-import { Storage } from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage';
 import { AuthenticationHttpModule } from '@mbamobi/authentication';
 import { ConfigurationModule } from '@mbamobi/configuration';
 import { DefaultPlugins, HttpModule, ThrowExceptionStatusToken } from '@mbamobi/http';
@@ -26,6 +26,7 @@ export function extraMessageError() {};
   ],
   imports: [
     IonicModule.forRoot(MyApp, AppConfig),
+    IonicStorageModule.forRoot(),
     TextMaskModule,
     ConfigurationModule.initialize(AppConfig, Env),
     UrlResolverModule.initialize(),
@@ -34,11 +35,11 @@ export function extraMessageError() {};
     AuthenticationHttpModule.initialize(),
   ],
   providers: [
-    Storage,
     Providers,
     { provide: ThrowExceptionStatusToken, useValue: extraMessageError },
     { provide: LOCALE_ID, useValue: 'pt-BR' },
-    ProviderEnv
+    ProviderEnv,
+    ProvidersNative
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [IonicApp],

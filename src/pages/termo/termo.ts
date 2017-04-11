@@ -2,7 +2,6 @@ import { Home } from '../pages';
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { App, NavParams } from 'ionic-angular';
-import { GoogleAnalytics } from 'ionic-native';
 
 export const KeyStorageTermo = '_termo';
 
@@ -22,8 +21,6 @@ export class TermoPage {
     }
 
     ngAfterViewInit() {
-        // Vamos registrar o evento de abertura de tela
-        GoogleAnalytics.trackView('Termo');
 
         this.storage.get(KeyStorageTermo).then((data) => {
             if (data === true) {

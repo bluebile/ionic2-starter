@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Storage } from '@ionic/storage';
 import { App, LoadingController, ToastController } from 'ionic-angular';
-import { GoogleAnalytics } from 'ionic-native';
 
 @Component({
   selector: 'page-login',
@@ -27,10 +26,6 @@ export class LoginPage {
       cpf: [ '', Validators.compose([ Validators.required, ValidatorsInternal.cpf ]) ],
       password: [ '', Validators.compose([ Validators.required ]) ],
     });
-
-    GoogleAnalytics.trackView('Login') .then(() => {
-      console.log('Sucesso ao registrar o acesso a página Login ( Analytics )');
-    }).catch(e => console.log('Error ao registrar acesso a página login ( Analytics )', e));
   }
 
   validate(): boolean {

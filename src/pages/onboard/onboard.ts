@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Authentication } from '@mbamobi/authentication';
 import { App } from 'ionic-angular';
-import { GoogleAnalytics } from 'ionic-native';
 
 export const KeyStorageOnboard = '_onboard';
 
@@ -33,11 +32,6 @@ export class OnboardPage {
 
   openHome() {
     this.app.getActiveNav().setRoot(Home);
-  }
-
-  ngAfterViewInit() {
-    // Vamos registrar o evento de abertura de tela
-    GoogleAnalytics.trackView('OnBoard');
   }
 
   close() {
