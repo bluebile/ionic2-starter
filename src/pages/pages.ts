@@ -1,4 +1,3 @@
-import { ErroConectividadePage } from './erro/erro-conectividade/erro-conectividade';
 import { HomePage } from './home';
 
 /**
@@ -7,8 +6,7 @@ import { HomePage } from './home';
  * can find them. As you add and remove pages, make sure to keep this list up to date.
  */
 export const Pages: any[] = [
-  HomePage,
-  ErroConectividadePage
+  HomePage
 ];
 
 export {

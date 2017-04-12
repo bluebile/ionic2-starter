@@ -8,7 +8,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicStorageModule } from '@ionic/storage';
 import { ConfigurationModule } from '@mbamobi/configuration';
 import { DefaultPlugins, HttpModule, ThrowExceptionStatusToken } from '@mbamobi/http';
-import { HttpPluginsIonicModule } from '@mbamobi/http-plugins-ionic';
 import { UrlResolverModule } from '@mbamobi/url-resolver';
 import { TextMaskModule } from 'angular2-text-mask';
 import { IonicApp, IonicModule } from 'ionic-angular';
@@ -28,8 +27,7 @@ export function extraMessageError() {};
     TextMaskModule,
     ConfigurationModule.initialize(AppConfig, Env),
     UrlResolverModule.initialize(),
-    HttpModule.initialize(DefaultPlugins),
-    HttpPluginsIonicModule
+    HttpModule.initialize(DefaultPlugins)
   ],
   providers: [
     Providers,
