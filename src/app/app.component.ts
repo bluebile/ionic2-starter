@@ -4,7 +4,6 @@ import { Nav, Platform } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
-
 @Component({
   template: `<ion-nav></ion-nav>`
 })
