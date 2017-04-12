@@ -30,8 +30,7 @@ export function extraMessageError() {};
     ConfigurationModule.initialize(AppConfig, Env),
     UrlResolverModule.initialize(),
     HttpModule.initialize(DefaultPlugins),
-    HttpPluginsIonicModule,
-    AuthenticationHttpModule.initialize(),
+    HttpPluginsIonicModule
   ],
   providers: [
     Providers,
