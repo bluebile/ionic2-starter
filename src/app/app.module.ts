@@ -6,7 +6,6 @@ import { Env, ProviderEnv } from './app.env';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicStorageModule } from '@ionic/storage';
-import { AuthenticationHttpModule } from '@mbamobi/authentication';
 import { ConfigurationModule } from '@mbamobi/configuration';
 import { DefaultPlugins, HttpModule, ThrowExceptionStatusToken } from '@mbamobi/http';
 import { HttpPluginsIonicModule } from '@mbamobi/http-plugins-ionic';
