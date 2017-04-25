@@ -15,6 +15,7 @@
   <engine name="ios" version="4.3.1"/>
   <engine name="android" version="6.1.1"/>
   <engine name="windows" version="4.4.3"/>
+  <allow-navigation href="http://localhost:8080/*"/>
   <platform name="android">
     <allow-intent href="market:*"/>
     <splash src="resources/android/splash/drawable-land-ldpi-screen.png" density="land-ldpi"/>
@@ -81,6 +82,9 @@
   <preference name="FadeSplashScreen" value="true"/>
   <preference name="ShowSplashScreenSpinner" value="false"/>
   <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine"/>
+  <feature name="CDVWKWebViewEngine">
+    <param name="ios-package" value="CDVWKWebViewEngine" />
+  </feature>
   <feature name="SplashScreen">
     <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen"/>
   </feature>
