@@ -1,6 +1,6 @@
-import { User } from '../../providers/providers';
+import { User } from '../../providers';
 import { Masks, Validators as ValidatorsInternal } from '../../util';
-import { Home, RecoveryPasswordPage, Termo } from '../pages';
+import { Home, RecoveryPasswordPage, Termo } from '../index';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Storage } from '@ionic/storage';

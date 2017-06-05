@@ -1,4 +1,4 @@
-import { Home, Login } from '../pages';
+import { Home, Login } from '../index';
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Authentication } from '@mbamobi/authentication';

@@ -1,4 +1,4 @@
-import { Home, KeyStorageOnboard, Login, Onboard } from '../pages/pages';
+import { Home, KeyStorageOnboard, Login, Onboard } from '../pages';
 import { Component, ViewChild } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Authentication } from '@mbamobi/authentication';

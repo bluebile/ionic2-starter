@@ -1,5 +1,5 @@
-import { Pages } from '../pages/pages';
-import { Providers, ProvidersNative } from '../providers/providers';
+import { Pages } from '../pages';
+import { Providers, ProvidersNative } from '../providers';
 import { MyApp } from './app.component';
 import { AppConfig } from './app.config';
 import { Env, ProviderEnv } from './app.env';

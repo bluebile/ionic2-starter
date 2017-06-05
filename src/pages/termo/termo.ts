@@ -1,4 +1,4 @@
-import { Home } from '../pages';
+import { Home } from '../index';
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { App, NavParams } from 'ionic-angular';
