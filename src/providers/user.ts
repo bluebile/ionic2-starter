@@ -46,7 +46,7 @@ export class User {
           {
             text: 'Não',
             role: 'cancel',
-            handler: () => reject
+            handler: reject
           },
           {
             text: 'Sim',

@@ -34,7 +34,7 @@ export class UserService {
     });
   }
 
-  list(): Promise<UserModel> {
+  list(): Promise<UserModel[]> {
     return this.getAll().then((dataJson) => {
       let users: Array<UserModel> = [];
 
