@@ -5,6 +5,8 @@ import { Env, ProviderEnv } from './app.env';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicStorageModule } from '@ionic/storage';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
 import { ConfigurationModule } from '@mbamobi/configuration';
 import { DefaultPlugins, HttpModule, ThrowExceptionStatusToken } from '@mbamobi/http';
 import { UrlResolverModule } from '@mbamobi/url-resolver';
@@ -32,6 +34,8 @@ export function extraMessageError() {};
     { provide: ThrowExceptionStatusToken, useValue: extraMessageError },
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     ProviderEnv,
+    SplashScreen,
+    StatusBar
   ],
   bootstrap: [IonicApp],
   entryComponents: [
