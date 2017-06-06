@@ -1,4 +1,4 @@
-import { HomePage } from '../pages/pages';
+import { HomePage } from '../pages';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
