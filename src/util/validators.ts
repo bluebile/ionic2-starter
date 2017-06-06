@@ -1,12 +1,8 @@
-import { FormControl } from '@angular/forms';
-
-interface ValidationResult {
-  [key: string]: boolean;
-}
+import { FormControl, ValidationErrors } from '@angular/forms';
 
 export class Validators {
 
-  static cpf(control: FormControl): ValidationResult {
+  static cpf(control: FormControl): ValidationErrors|null {
     let numeros, digitos, soma, i, resultado;
     let cpf = control.value.replace(/\D/gi, '');
     let digitosIguais = 1;
