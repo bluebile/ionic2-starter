@@ -5,7 +5,6 @@ import { OnboardPage } from './onboard/onboard';
 import { ProfilePage } from './profile/profile';
 import { RecoveryPasswordPage } from './recovery-password/recovery-password';
 import { TermoPage } from './termo/termo';
-import { UserDetailPage } from './user-detail/user-detail';
 
 /**
  * The Pages array lists all of the pages we want to use in our app.
@@ -21,9 +20,7 @@ export const Pages: any[] = [
     UserListPage,
     CardPage,
     ProfilePage,
-    RecoveryPasswordPage,
-    UserDetailPage
-
+    RecoveryPasswordPage
 ];
 
 export const Home = HomePage;
@@ -41,6 +38,5 @@ export {
     UserListPage,
     CardPage,
     ProfilePage,
-    RecoveryPasswordPage,
-    UserDetailPage
+    RecoveryPasswordPage
 };
