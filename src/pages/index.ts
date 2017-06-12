@@ -2,7 +2,6 @@ import { ErroConectividadePage } from './erro/erro-conectividade/erro-conectivid
 import { CardPage, HomePage, UserListPage } from './home';
 import { LoginPage } from './login/login';
 import { OnboardPage } from './onboard/onboard';
-import { ProfilePage } from './profile/profile';
 import { RecoveryPasswordPage } from './recovery-password/recovery-password';
 import { TermoPage } from './termo/termo';
 
@@ -19,7 +18,6 @@ export const Pages: any[] = [
     OnboardPage,
     UserListPage,
     CardPage,
-    ProfilePage,
     RecoveryPasswordPage
 ];
 
@@ -37,6 +35,5 @@ export {
     ErroConectividadePage,
     UserListPage,
     CardPage,
-    ProfilePage,
     RecoveryPasswordPage
 };

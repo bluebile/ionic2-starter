@@ -3,7 +3,7 @@ export const APP_ROUTES_DEV = {
   '_defaults': {
     'host': 'http://192.168.10.72:8080/rest/',
     'variables': {
-      'mock': 'http://192.168.10.72:3000'
+      'mock': 'http://localhost:3000'
     }
   },
   'login': {
