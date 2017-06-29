@@ -1,10 +1,13 @@
 import { Home } from '../index';
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { App, NavParams } from 'ionic-angular';
+import { App, IonicPage, NavParams } from 'ionic-angular';
 
 export const KeyStorageTermo = '_termo';
 
+@IonicPage({
+  name: 'termo'
+})
 @Component({
     selector: 'page-termo',
     templateUrl: 'termo.html'

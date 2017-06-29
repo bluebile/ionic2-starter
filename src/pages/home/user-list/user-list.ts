@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { UserService } from '../../../services/user/user';
 import { UserModel } from '../../../services/user/user.model';
 
+@IonicPage({
+  name: 'home-userList'
+})
 @Component({
     selector: 'page-userlist',
     templateUrl: 'user-list.html',

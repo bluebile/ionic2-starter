@@ -2,10 +2,13 @@ import { Home, Login } from '../index';
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Authentication } from '@mbamobi/authentication';
-import { App } from 'ionic-angular';
+import { App, IonicPage } from 'ionic-angular';
 
 export const KeyStorageOnboard = '_onboard';
 
+@IonicPage({
+  name: 'onboard'
+})
 @Component({
   selector: 'page-onboard',
   templateUrl: 'onboard.html'

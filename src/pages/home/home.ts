@@ -1,7 +1,9 @@
-import { CardPage } from './card/card';
-import { UserListPage } from './user-list/user-list';
 import { Component } from '@angular/core';
+import { IonicPage } from 'ionic-angular';
 
+@IonicPage({
+  name: 'home'
+})
 @Component({
   selector: 'home-page',
   templateUrl: 'home.html'
@@ -13,7 +15,7 @@ export class HomePage {
   tabProfile: any;
 
   constructor() {
-    this.tabCard = CardPage;
-    this.tabUserList = UserListPage;
+    this.tabCard = 'home-card';
+    this.tabUserList = 'home-userList';
   }
 }

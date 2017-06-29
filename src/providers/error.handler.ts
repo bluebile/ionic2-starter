@@ -1,5 +1,5 @@
 import { EnvToken } from '../app/app.env';
-import { ErroConectividadePage, Login } from '../pages';
+import { Login } from '../pages';
 import { ErrorHandler as ErrorHandlerAngular, forwardRef, Inject, Injectable, } from '@angular/core';
 import { Response } from '@angular/http';
 import { Authentication } from '@mbamobi/authentication';
@@ -67,7 +67,7 @@ export class ErrorHandler extends IonicErrorHandler implements ErrorHandlerAngul
   }
 
   private createModalConectivity() {
-    const modal = this.modalCtrl.create(ErroConectividadePage);
+    const modal = this.modalCtrl.create('erro-conectividade');
     modal.present({animate: false});
   }
 }

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { ToastController, NavController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController,  } from 'ionic-angular';
 
+@IonicPage({
+  name: 'login-recoveryPassword'
+})
 @Component({
   selector: 'page-recovery-password',
   templateUrl: 'recovery-password.html'

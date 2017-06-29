@@ -1,11 +1,14 @@
 import { User } from '../../providers';
 import { Masks, Validators as ValidatorsInternal } from '../../util';
-import { Home, RecoveryPasswordPage, Termo } from '../index';
+import { Home, Termo } from '../index';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Storage } from '@ionic/storage';
-import { App, LoadingController, ToastController } from 'ionic-angular';
+import { App, IonicPage, LoadingController, ToastController } from 'ionic-angular';
 
+@IonicPage({
+  name: 'login'
+})
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -86,6 +89,6 @@ export class LoginPage {
   }
 
   recoveyPassword() {
-    this.app.getActiveNav().push(RecoveryPasswordPage);
+    this.app.getActiveNav().push('recovery-password');
   }
 }
