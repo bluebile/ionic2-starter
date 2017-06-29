@@ -9,13 +9,6 @@ import { IonicPage } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  tabCard: any;
-  tabUserList: any;
-  tabProfile: any;
-
-  constructor() {
-    this.tabCard = 'home-card';
-    this.tabUserList = 'home-userList';
-  }
+  tabCard: string = 'home-card';
+  tabUserList: string = 'home-userList';
 }

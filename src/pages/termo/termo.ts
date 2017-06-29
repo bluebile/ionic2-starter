@@ -9,31 +9,33 @@ export const KeyStorageTermo = '_termo';
   name: 'termo'
 })
 @Component({
-    selector: 'page-termo',
-    templateUrl: 'termo.html'
+  selector: 'page-termo',
+  templateUrl: 'termo.html'
 })
 export class TermoPage {
-    hiddenButton: boolean = false;
+  hiddenButton: boolean = false;
 
-    constructor(private app: App,
-                private storage: Storage,
-                navParams: NavParams) {
-        if (navParams.get('internal') === true) {
-            this.hiddenButton = true;
-        }
+  constructor(
+    private app: App,
+    private storage: Storage,
+    navParams: NavParams) {
+
+    if (navParams.get('internal') === true) {
+      this.hiddenButton = true;
     }
+  }
 
-    ngAfterViewInit() {
+  ngAfterViewInit() {
 
-        this.storage.get(KeyStorageTermo).then((data) => {
-            if (data === true) {
-                this.hiddenButton = true;
-            }
-        });
-    }
+    this.storage.get(KeyStorageTermo).then((data) => {
+      if (data === true) {
+        this.hiddenButton = true;
+      }
+    });
+  }
 
-    accept() {
-        this.storage.set(KeyStorageTermo, true);
-        this.app.getActiveNav().setRoot(Home);
-    }
+  accept() {
+    this.storage.set(KeyStorageTermo, true);
+    this.app.getActiveNav().setRoot(Home);
+  }
 }

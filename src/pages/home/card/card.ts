@@ -6,17 +6,17 @@ import { UserService } from '../../../services/user/user';
   name: 'home-card'
 })
 @Component({
-    selector: 'page-card',
-    templateUrl: 'card.html',
-    providers: [ UserService ]
+  selector: 'page-card',
+  templateUrl: 'card.html',
+  providers: [ UserService ]
 })
 export class CardPage {
 
-    cards: any;
+  cards: any;
 
-    constructor(public userService: UserService) {
-        this.userService.list().then(result => {
-            this.cards = result;
-        });
-    }
+  constructor(public userService: UserService) {
+    this.userService.list().then(result => {
+      this.cards = result;
+    });
+  }
 }
