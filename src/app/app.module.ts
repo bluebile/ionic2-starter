@@ -13,7 +13,7 @@ import { UrlResolverModule } from '@mbamobi/url-resolver';
 import { IonicApp, IonicModule } from 'ionic-angular';
 
 // extração mensagem de erro do serviço
-export function extraMessageError() {};
+export function extraMessageError() {}
 
 @NgModule({
   declarations: [
