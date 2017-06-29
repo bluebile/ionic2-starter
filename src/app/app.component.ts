@@ -1,4 +1,3 @@
-import { HomePage } from '../pages';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,7 +27,7 @@ export class MyApp {
   }
 
   openHome() {
-    this.nav.setRoot(HomePage).then(() => {
+    this.nav.setRoot('home').then(() => {
       this.splashscreen.hide();
     });
   }

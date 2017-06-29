@@ -15,6 +15,7 @@ export const APP_ROUTES_DEV = {
 };
 
 export const AppConfig = {
+  preloadModules: true,
   authentication: {
     http: {
       url: 'login',

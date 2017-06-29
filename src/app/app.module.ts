@@ -1,4 +1,3 @@
-import { Pages } from '../pages';
 import { MyApp } from './app.component';
 import { AppConfig } from './app.config';
 import { Env, ProviderEnv } from './app.env';
@@ -14,12 +13,11 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { IonicApp, IonicModule } from 'ionic-angular';
 
 // extração mensagem de erro do serviço
-export function extraMessageError() {};
+export function extraMessageError() {}
 
 @NgModule({
   declarations: [
-    MyApp,
-    Pages
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -39,8 +37,7 @@ export function extraMessageError() {};
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    Pages
+    MyApp
   ]
 })
 export class AppModule {
