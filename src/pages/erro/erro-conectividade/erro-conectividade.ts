@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { Http } from '@mbamobi/http';
-import { Events, Platform, ToastController, ViewController } from 'ionic-angular';
+import { Events, IonicPage, Platform, ToastController, ViewController } from 'ionic-angular';
 import { Diagnostic } from '@ionic-native/diagnostic';
 import { Network } from '@ionic-native/network';
 
+@IonicPage({
+  name: 'erro-conectividade'
+})
 @Component({
-  selector: 'erro-conectividade',
+  selector: 'page-erro-conectividade',
   templateUrl: 'erro-conectividade.html'
 })
 
