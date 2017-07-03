@@ -15,7 +15,7 @@ if (indexEnv !== -1) {
 }
 
 var content = fs.readFileSync('./src/app/app.env.ts.skel');
-var comtentReplace = content.toString().replace(/Env = '.*'/, `Env = '${env}'`);
+var comtentReplace = content.toString().replace(/Env: string = '.*'/, `Env: string = '${env}'`);
 var wstream = fs.createWriteStream('./src/app/app.env.ts', { ovewrite: true });
 wstream.write(comtentReplace);
 wstream.end();
