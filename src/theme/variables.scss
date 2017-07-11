@@ -1,3 +1,7 @@
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/v2/theming/
 @import "ionic.globals";
@@ -68,3 +72,6 @@ $colors: (
 
 $ionicons-font-path: "../assets/fonts";
 @import "ionicons";
+
+@import "roboto";
+@import "noto-sans";
