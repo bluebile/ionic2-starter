@@ -1,9 +1,12 @@
+import { MbaNotification } from './../providers/mba-notification';
 import { Home, KeyStorageOnboard, Login, Onboard } from '../pages';
 import { Component, ViewChild } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Authentication } from '@mbamobi/authentication';
 import { Nav, Platform } from 'ionic-angular';
+import { Config } from '@mbamobi/configuration';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { OneSignal } from '@ionic-native/onesignal';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
@@ -20,6 +23,9 @@ export class MyApp {
     private platform: Platform,
     private splashscreen: SplashScreen,
     private statusBar: StatusBar,
+    private oneSignal: OneSignal,
+    private config: Config,
+    private notification: MbaNotification,
     private storage: Storage
   ) {
     this.platform.ready().then(() => {
@@ -29,6 +35,29 @@ export class MyApp {
 
   ngAfterViewInit() {
     this.platform.ready().then(() => {
+      let settings = {
+        kOSSettingsKeyAutoPrompt: true,
+        kOSSettingsKeyInAppLaunchURL: false
+      };
+      this.oneSignal.startInit(
+        this.config.get('onesingalAppId'),
+        this.config.get('googleProjectNumber')
+      );
+      this.oneSignal.iOSSettings(settings);
+      this.oneSignal.endInit();
+      this.oneSignal.getIds().then(
+        (ids) => {
+          this.notification.registerClient(ids.userId).subscribe(
+            () => {
+              console.log('cliente registrado com sucesso');
+            },
+            (error) => {
+               console.log('erro ao registrar cliente');
+               console.log(error);
+            }
+          );
+        }
+      );
       this.openHome();
     });
   }

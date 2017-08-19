@@ -1,5 +1,7 @@
+import { OneSignal } from '@ionic-native/onesignal';
 import { ERROR_HANDLER } from './error.handler';
 import { User } from './user';
+import { MbaNotification } from './mba-notification';
 import { Diagnostic } from '@ionic-native/diagnostic';
 import { Network } from '@ionic-native/network';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,7 +16,9 @@ export const ProvidersNative = [
   Diagnostic,
   Network,
   SplashScreen,
-  StatusBar
+  StatusBar,
+  OneSignal
 ];
 
 export { User };
+export { MbaNotification };

@@ -11,4 +11,5 @@ import { IonicPage } from 'ionic-angular';
 export class HomePage {
   tabCard: string = 'home-card';
   tabUserList: string = 'home-userList';
+  tabMessage: string = 'home-message';
 }

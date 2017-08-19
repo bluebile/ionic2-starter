@@ -11,6 +11,40 @@ export const APP_ROUTES_DEV = {
   },
   'usuarios': {
     'url': '{mock}/usuarios'
+  },
+  'notification-register-client': {
+    'url': 'http://162.243.107.16:8888/mba-mmmessage/client',
+    'method': 'POST',
+    'params': {
+      'idApp': {
+        'type': 'string',
+        'required': true
+      },
+      'dsIdentity': {
+        'type': 'string',
+        'required': true
+      },
+      'noClient': {
+        'type': 'string',
+        'required': false
+      },
+      'dsEmail': {
+        'type': 'string',
+        'required': false
+      },
+      'nuPhone': {
+        'type': 'string',
+        'required': false
+      },
+      'tags': {
+        'type': 'array',
+        'required': false
+      },
+      'devices': {
+        'type': 'array',
+        'required': false
+      }
+    }
   }
 };
 
@@ -25,6 +59,21 @@ export const AppConfig = {
         'Content-type': 'application/x-www-form-urlencoded'
       }
     }
+  },
+  onesingalAppId: {
+    dev: '19677f2e-9e7d-4187-9a3a-ba226200ae07',
+    staging: '19677f2e-9e7d-4187-9a3a-ba226200ae07',
+    production: '19677f2e-9e7d-4187-9a3a-ba226200ae07',
+  },
+  appBundle: {
+    dev: 'br.com.mbamobi.ionic.starter',
+    staging: 'br.com.mbamobi.ionic.starter',
+    production: 'br.com.mbamobi.ionic.starter',
+  },
+  googleProjectNumber: {
+    dev: '101349642110',
+    staging: '101349642110',
+    production: '101349642110',
   },
   urlResolver: {
     dev: APP_ROUTES_DEV
