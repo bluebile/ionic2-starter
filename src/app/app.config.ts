@@ -17,32 +17,38 @@ export const APP_ROUTES_DEV = {
     'method': 'POST',
     'params': {
       'idApp': {
-        'type': 'string',
-        'required': true
+        'type': 'string'
       },
       'dsIdentity': {
         'type': 'string',
         'required': true
       },
       'noClient': {
-        'type': 'string',
-        'required': false
+        'type': 'string'
       },
       'dsEmail': {
-        'type': 'string',
-        'required': false
+        'type': 'string'
       },
       'nuPhone': {
-        'type': 'string',
-        'required': false
+        'type': 'string'
       },
       'tags': {
-        'type': 'array',
-        'required': false
+        'type': 'array'
       },
       'devices': {
-        'type': 'array',
-        'required': false
+        'type': 'array'
+      }
+    },
+    'notification-update-tags': {
+      'url': 'http://162.243.107.16:8888/mba-mmmessage/client/tags',
+      'method': 'POST',
+      'params': {
+        'dsIdentity': {
+          'type': 'string'
+        },
+        'tags': {
+          'type': 'array'
+        }
       }
     }
   }

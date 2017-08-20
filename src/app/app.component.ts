@@ -1,4 +1,4 @@
-import { MbaNotification } from './../providers/mba-notification';
+import { MbaNotification, _tagsStorageKey, _userRegistred } from './../providers/mba-notification';
 import { Home, KeyStorageOnboard, Login, Onboard } from '../pages';
 import { Component, ViewChild } from '@angular/core';
 import { Storage } from '@ionic/storage';
@@ -35,6 +35,17 @@ export class MyApp {
 
   ngAfterViewInit() {
     this.platform.ready().then(() => {
+      this.startNotification();
+      this.openHome();
+    });
+  }
+
+  startNotification() {
+    this.storage.get(_userRegistred).then(
+      (isResgistred) => {
+      if (isResgistred) {
+        return false;
+      }
       let settings = {
         kOSSettingsKeyAutoPrompt: true,
         kOSSettingsKeyInAppLaunchURL: false
@@ -47,18 +58,30 @@ export class MyApp {
       this.oneSignal.endInit();
       this.oneSignal.getIds().then(
         (ids) => {
-          this.notification.registerClient(ids.userId).subscribe(
-            () => {
-              console.log('cliente registrado com sucesso');
-            },
-            (error) => {
-               console.log('erro ao registrar cliente');
-               console.log(error);
-            }
-          );
+          this.registerNotificationDevice(ids);
         }
       );
-      this.openHome();
+    });
+  }
+
+  registerNotificationDevice(ids) {
+    this.storage.get(_tagsStorageKey).then((tags) => {
+      let params = {
+        appBundle: this.config.get('appBundle'),
+        dsIdentity: ids.userId,
+        tags: JSON.parse(tags),
+        devices: [ids.userId]
+      };
+      this.notification.registerClient(params).subscribe(
+        () => {
+          this.storage.set(_userRegistred, true);
+          console.log('cliente registrado com sucesso');
+        },
+        (error) => {
+           console.log('erro ao registrar cliente');
+           console.log(error);
+        }
+      );
     });
   }
 
