@@ -1,4 +1,5 @@
-import { MbaNotificationProvider, _tagsStorageKey, _userRegistred } from './../providers/mba.notification';
+import { MbaNotificationProvider, _tagsStorageKey, _userRegistred } from './../providers/mba-notification';
+import { Home } from '../pages';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';

@@ -3,7 +3,7 @@ export const APP_ROUTES_DEV = {
   '_defaults': {
     'host': 'http://192.168.10.72:8080/rest/',
     'variables': {
-      'mock': 'http://localhost:3000'
+      'mock': 'http://192.168.10.72:3000'
     }
   },
   'login': {
@@ -25,51 +25,33 @@ export const APP_ROUTES_DEV = {
         'required': true
       },
       'noClient': {
-
-        'type': 'string'
+        'type': 'string',
+        'required': false
       },
       'dsEmail': {
-        'type': 'string'
+        'type': 'string',
+        'required': false
       },
       'nuPhone': {
-        'type': 'string'
+        'type': 'string',
+        'required': false
       },
       'tags': {
-        'type': 'array'
+        'type': 'array',
+        'required': false
       },
       'devices': {
-        'type': 'array'
-      }
-    },
-    'notification-update-tags': {
-      'url': 'http://162.243.107.16:8888/mba-mmmessage/client/tags',
-      'method': 'POST',
-      'params': {
-        'dsIdentity': {
-          'type': 'string'
-        },
-        'tags': {
-          'type': 'array'
-        }
+        'type': 'array',
+        'required': false
       }
     }
-  },
-  'mmmessage': {
-    'url': 'http://162.243.107.16:8888/mba-mmmessage'
   }
 };
 
 export const AppConfig = {
   preloadModules: true,
-  authentication: {
-    http: {
-      url: 'login',
-      paramNameIdentity: 'cpf',
-      paramNameCredential: 'senha',
-      headers: {
-        'Content-type': 'application/x-www-form-urlencoded'
-      }
-    }
+  urlResolver: {
+    dev: APP_ROUTES_DEV
   },
   onesingalAppId: {
     dev: '19677f2e-9e7d-4187-9a3a-ba226200ae07',
@@ -86,8 +68,10 @@ export const AppConfig = {
     staging: '101349642110',
     production: '101349642110',
   },
-  urlResolver: {
-    dev: APP_ROUTES_DEV
+  http: {
+    defaultOptions: {
+      timeout: 15000
+    }
   },
   mmprovider: {
     mmmessage: 'mmmessage'

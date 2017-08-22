@@ -61,6 +61,7 @@ export const APP_ROUTES_DEV = {
 
 export const AppConfig = {
   preloadModules: true,
+<<<<<<< Updated upstream
   authentication: {
     http: {
       url: 'login',
@@ -86,8 +87,30 @@ export const AppConfig = {
     staging: '101349642110',
     production: '101349642110',
   },
+=======
+>>>>>>> Stashed changes
   urlResolver: {
     dev: APP_ROUTES_DEV
+  },
+  onesingalAppId: {
+    dev: '19677f2e-9e7d-4187-9a3a-ba226200ae07',
+    staging: '19677f2e-9e7d-4187-9a3a-ba226200ae07',
+    production: '19677f2e-9e7d-4187-9a3a-ba226200ae07',
+  },
+  appBundle: {
+    dev: 'br.com.mbamobi.ionic.starter',
+    staging: 'br.com.mbamobi.ionic.starter',
+    production: 'br.com.mbamobi.ionic.starter',
+  },
+  googleProjectNumber: {
+    dev: '101349642110',
+    staging: '101349642110',
+    production: '101349642110',
+  },
+  http: {
+    defaultOptions: {
+      timeout: 15000
+    }
   },
   mmprovider: {
     mmmessage: 'mmmessage'

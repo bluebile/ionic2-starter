@@ -9,6 +9,7 @@ import { DefaultPlugins, HttpModule, ThrowExceptionStatusToken } from '@mbamobi/
 import { UrlResolverModule } from '@mbamobi/url-resolver';
 import { TextMaskModule } from 'angular2-text-mask';
 import { HttpPluginsIonicModule } from '@mbamobi/http-plugins-ionic';
+
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MbaNotificationProvider, ProvidersNative } from '../providers';
 
@@ -27,8 +28,7 @@ export function extraMessageError() {}
     TextMaskModule,
     ConfigurationModule.initialize(AppConfig, Env),
     UrlResolverModule.initialize(),
-    HttpModule.initialize(DefaultPlugins),
-    HttpPluginsIonicModule
+    HttpModule.initialize(DefaultPlugins)
   ],
   providers: [
     { provide: ThrowExceptionStatusToken, useValue: extraMessageError },

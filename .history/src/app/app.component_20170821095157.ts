@@ -1,4 +1,3 @@
-import { MbaNotificationProvider, _tagsStorageKey, _userRegistred } from './../providers/mba.notification';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -6,6 +5,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { Config } from '@mbamobi/configuration';
 import { OneSignal } from '@ionic-native/onesignal';
 import { Storage } from '@ionic/storage';
+import { MbaNotification, ONESIGNAL_USER_ID } from '../providers/mba.notification';
 
 @Component({
   template: `<ion-nav></ion-nav>`
@@ -20,7 +20,7 @@ export class MyApp {
     private statusBar: StatusBar,
     private oneSignal: OneSignal,
     private config: Config,
-    private notification: MbaNotificationProvider,
+    private notification: MbaNotification,
     private storage: Storage
   ) {
     this.platform.ready().then(() => {
@@ -30,17 +30,6 @@ export class MyApp {
 
   ngAfterViewInit() {
     this.platform.ready().then(() => {
-      this.startNotification();
-      this.openHome();
-    });
-  }
-
-  startNotification() {
-    this.storage.get(_userRegistred).then(
-      (isResgistred) => {
-      if (isResgistred) {
-        return false;
-      }
       let settings = {
         kOSSettingsKeyAutoPrompt: true,
         kOSSettingsKeyInAppLaunchURL: false
@@ -53,38 +42,25 @@ export class MyApp {
       this.oneSignal.endInit();
       this.oneSignal.getIds().then(
         (ids) => {
-          this.registerNotificationDevice(ids);
+          this.storage.set(USER_ID, ids.userId);
+          this.notification.registerClient(ids.userId).subscribe(
+            () => {
+              console.log('cliente registrado com sucesso');
+            },
+            (error: any) => {
+               console.log('erro ao registrar cliente');
+               console.log(error);
+            }
+          );
         }
       );
-    });
-  }
-
-  registerNotificationDevice(ids) {
-    this.storage.get(_tagsStorageKey).then((tags) => {
-      let params = {
-        appBundle: this.config.get('appBundle'),
-        dsIdentity: ids.userId,
-        tags: JSON.parse(tags),
-        devices: [ids.userId]
-      };
-      this.notification.registerClient(params).subscribe(
-        () => {
-          this.storage.set(_userRegistred, true);
-          console.log('cliente registrado com sucesso');
-        },
-        (error) => {
-           console.log('erro ao registrar cliente');
-           console.log(error);
-        }
-      );
+      this.openHome();
     });
   }
 
   openHome() {
     this.nav.setRoot('home').then(() => {
-      setTimeout(() => {
-        this.splashscreen.hide();
-      }, 500);
+      this.splashscreen.hide();
     });
   }
 }

@@ -8,7 +8,7 @@ import { ConfigurationModule } from '@mbamobi/configuration';
 import { DefaultPlugins, HttpModule, ThrowExceptionStatusToken } from '@mbamobi/http';
 import { UrlResolverModule } from '@mbamobi/url-resolver';
 import { TextMaskModule } from 'angular2-text-mask';
-import { HttpPluginsIonicModule } from '@mbamobi/http-plugins-ionic';
+import { MuralIonicModule, MuralComponent } from '@mbamobi/mural-ionic';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MbaNotificationProvider, ProvidersNative } from '../providers';
 
@@ -23,12 +23,11 @@ export function extraMessageError() {}
     BrowserModule,
     IonicModule.forRoot(MyApp, AppConfig),
     IonicStorageModule.forRoot(),
-    HttpPluginsIonicModule,
     TextMaskModule,
+    MuralIonicModule.forRoot(),
     ConfigurationModule.initialize(AppConfig, Env),
     UrlResolverModule.initialize(),
-    HttpModule.initialize(DefaultPlugins),
-    HttpPluginsIonicModule
+    HttpModule.initialize(DefaultPlugins)
   ],
   providers: [
     { provide: ThrowExceptionStatusToken, useValue: extraMessageError },

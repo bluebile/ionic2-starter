@@ -9,6 +9,7 @@ nbproject
 .idea
 .vscode/*
 !.vscode/settings.json
+.history
 
 # arquivos privados de IDE
 *.sublime-workspace

@@ -5,7 +5,7 @@ import { MuralIonicModule, MuralComponent } from '@mbamobi/mural-ionic';
 
 @NgModule({
   declarations: [
-    HomePage
+    HomePage,
   ],
   imports: [
     IonicPageModule.forChild(HomePage),

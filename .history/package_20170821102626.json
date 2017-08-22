@@ -56,7 +56,6 @@
     "@mbamobi/http": "3.0.0",
     "@mbamobi/http-plugins-ionic": "3.0.0",
     "@mbamobi/mural-ionic": "0.0.2",
-    "@mbamobi/sql-storage": "0.0.1",
     "@mbamobi/url-resolver": "3.0.0",
     "@ramonornela/json-server": "0.9.4",
     "angular2-text-mask": "8.0.1",
