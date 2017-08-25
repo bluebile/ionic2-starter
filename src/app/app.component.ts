@@ -1,11 +1,13 @@
-import { MbaNotificationProvider, _tagsStorageKey, _userRegistred } from './../providers/mba.notification';
-import { Component, ViewChild } from '@angular/core';
+import { DeviceToken } from './app.env';
+import { _oneSignalUser, _userRegistred, MbaNotificationProvider, User } from './../providers';
+import { Component, Inject, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Config } from '@mbamobi/configuration';
 import { OneSignal } from '@ionic-native/onesignal';
 import { Storage } from '@ionic/storage';
+import { AppVersion } from '@ionic-native/app-version';
 
 @Component({
   template: `<ion-nav></ion-nav>`
@@ -20,6 +22,9 @@ export class MyApp {
     private statusBar: StatusBar,
     private oneSignal: OneSignal,
     private config: Config,
+    @Inject(DeviceToken) private deviceInfo,
+    private appVersion: AppVersion,
+    private user: User,
     private notification: MbaNotificationProvider,
     private storage: Storage
   ) {
@@ -30,53 +35,65 @@ export class MyApp {
 
   ngAfterViewInit() {
     this.platform.ready().then(() => {
-      this.startNotification();
-      this.openHome();
+      if (this.platform.is('cordova')) {
+        this.appVersion.getVersionNumber().then((version) => {
+          this.deviceInfo['version'] = version;
+          this.appVersion.getPackageName().then((appBundle) => {
+            this.deviceInfo['bundle'] = appBundle;
+            this.startNotification();
+            this.openHome();
+          });
+        });
+        return;
+      }
+      this.startNotification().then(() => this.choiceLoginOrHome());
     });
   }
 
   startNotification() {
-    this.storage.get(_userRegistred).then(
-      (isResgistred) => {
-      if (isResgistred) {
-        return false;
+    return new Promise((resolve) => {
+      if (this.platform.is('cordova')) {
+        let settings = {
+          kOSSettingsKeyAutoPrompt: true,
+          kOSSettingsKeyInAppLaunchURL: false
+        };
+        this.oneSignal.startInit(
+          this.config.get('onesingalAppId'),
+          this.config.get('googleProjectNumber')
+        );
+        this.oneSignal.iOSSettings(settings);
+        this.oneSignal.endInit();
+        this.oneSignal.getIds().then(
+          (ids) => {
+            this.storage.set(_oneSignalUser, ids.userId);
+            resolve();
+          }
+        );
+        return;
       }
-      let settings = {
-        kOSSettingsKeyAutoPrompt: true,
-        kOSSettingsKeyInAppLaunchURL: false
-      };
-      this.oneSignal.startInit(
-        this.config.get('onesingalAppId'),
-        this.config.get('googleProjectNumber')
-      );
-      this.oneSignal.iOSSettings(settings);
-      this.oneSignal.endInit();
-      this.oneSignal.getIds().then(
-        (ids) => {
-          this.registerNotificationDevice(ids);
-        }
-      );
+      resolve();
     });
   }
 
-  registerNotificationDevice(ids) {
-    this.storage.get(_tagsStorageKey).then((tags) => {
-      let params = {
-        appBundle: this.config.get('appBundle'),
-        dsIdentity: ids.userId,
-        tags: JSON.parse(tags),
-        devices: [ids.userId]
-      };
-      this.notification.registerClient(params).subscribe(
-        () => {
-          this.storage.set(_userRegistred, true);
-          console.log('cliente registrado com sucesso');
-        },
-        (error) => {
-           console.log('erro ao registrar cliente');
-           console.log(error);
+  choiceLoginOrHome() {
+    if (this.user.has()) {
+      this.storage.get(_userRegistred).then((isRegistered) => {
+        console.log(isRegistered);
+        if (!isRegistered) {
+          this.notification.registerNotificationDevice();
         }
-      );
+        this.openHome();
+      });
+      return;
+    }
+    this.openLogin();
+  }
+
+  openLogin() {
+    this.nav.setRoot('login').then(() => {
+      setTimeout(() => {
+        this.splashscreen.hide();
+      }, 500);
     });
   }
 

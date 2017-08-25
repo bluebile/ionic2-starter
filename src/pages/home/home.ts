@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
+import { User } from '../../providers';
 
 @IonicPage({
   name: 'home'
@@ -9,7 +10,5 @@ import { IonicPage } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  tabCard: string = 'home-card';
-  tabUserList: string = 'home-userList';
-  tabMessage: string = 'home-message';
+  constructor(public user: User) {}
 }

@@ -1,0 +1,17 @@
+<ion-content>
+  <form (ngSubmit)="login()">
+      <div class="box-inputs">
+          <ion-item>
+              <ion-input type="text" maxlength="50"
+                         [(ngModel)]="form.username" name="username" placeholder="Usuário"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-input [(ngModel)]="form.password" name="password" type="password" placeholder="Senha"></ion-input>
+          </ion-item>
+          <ion-buttons margin-top>
+              <button ion-button block type="submit">ENTRAR</button>
+              <input ion-button clear type="button" class="input-recovery-password" value="Esqueci minha senha" (click)="recoveyPassword()">
+          </ion-buttons>
+      </div>
+  </form>
+</ion-content>

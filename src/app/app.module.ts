@@ -1,6 +1,6 @@
 import { MyApp } from './app.component';
 import { AppConfig } from './app.config';
-import { Env, ProviderEnv } from './app.env';
+import { DeviceInfo, Env, ProviderEnv } from './app.env';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicStorageModule } from '@ionic/storage';
@@ -11,6 +11,7 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { HttpPluginsIonicModule } from '@mbamobi/http-plugins-ionic';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MbaNotificationProvider, ProvidersNative } from '../providers';
+import { User } from '../providers/user';
 
 // extração mensagem de erro do serviço
 export function extraMessageError() {}
@@ -34,8 +35,10 @@ export function extraMessageError() {}
     { provide: ThrowExceptionStatusToken, useValue: extraMessageError },
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     ProviderEnv,
+    DeviceInfo,
     ProvidersNative,
-    MbaNotificationProvider
+    MbaNotificationProvider,
+    User
   ],
   bootstrap: [IonicApp],
   entryComponents: [

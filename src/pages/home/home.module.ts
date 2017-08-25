@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { HomePage } from './home';
-import { MuralIonicModule, MuralComponent } from '@mbamobi/mural-ionic';
+import { MuralIonicModule } from '@mbamobi/mural-ionic';
 
 @NgModule({
   declarations: [
@@ -13,9 +13,6 @@ import { MuralIonicModule, MuralComponent } from '@mbamobi/mural-ionic';
   ],
   exports: [
     HomePage
-  ],
-  entryComponents: [
-    MuralComponent
   ]
 })
 export class HomeModule {}

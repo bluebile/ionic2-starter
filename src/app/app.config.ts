@@ -1,22 +1,13 @@
 // TODO link para documentação do URL resolver com docs e exemplos
 export const APP_ROUTES_DEV = {
   '_defaults': {
-    'host': 'http://192.168.10.72:8080/rest/',
-    'variables': {
-      'mock': 'http://localhost:3000'
-    }
-  },
-  'login': {
-    'url': '{mock}/auth'
-  },
-  'usuarios': {
-    'url': '{mock}/usuarios'
+    'host': 'http://ec2-52-67-203-191.sa-east-1.compute.amazonaws.com:8080/rest/'
   },
   'notification-register-client': {
-    'url': 'http://162.243.107.16:8888/mba-mmmessage/client',
+    'url': 'http://ec2-52-67-203-191.sa-east-1.compute.amazonaws.com:8080/mba-mmmessage/client',
     'method': 'POST',
     'params': {
-      'idApp': {
+      'noAppBundle': {
         'type': 'string',
         'required': true
       },
@@ -25,7 +16,6 @@ export const APP_ROUTES_DEV = {
         'required': true
       },
       'noClient': {
-
         'type': 'string'
       },
       'dsEmail': {
@@ -33,16 +23,10 @@ export const APP_ROUTES_DEV = {
       },
       'nuPhone': {
         'type': 'string'
-      },
-      'tags': {
-        'type': 'array'
-      },
-      'devices': {
-        'type': 'array'
       }
     },
     'notification-update-tags': {
-      'url': 'http://162.243.107.16:8888/mba-mmmessage/client/tags',
+      'url': 'http://ec2-52-67-203-191.sa-east-1.compute.amazonaws.com:8080/mba-mmmessage/client/tags',
       'method': 'POST',
       'params': {
         'dsIdentity': {
@@ -55,31 +39,21 @@ export const APP_ROUTES_DEV = {
     }
   },
   'mmmessage': {
-    'url': 'http://162.243.107.16:8888/mba-mmmessage'
+    'url': 'http://ec2-52-67-203-191.sa-east-1.compute.amazonaws.com:8080/mba-mmmessage'
   }
 };
 
 export const AppConfig = {
   preloadModules: true,
-  authentication: {
-    http: {
-      url: 'login',
-      paramNameIdentity: 'cpf',
-      paramNameCredential: 'senha',
-      headers: {
-        'Content-type': 'application/x-www-form-urlencoded'
-      }
-    }
-  },
   onesingalAppId: {
     dev: '19677f2e-9e7d-4187-9a3a-ba226200ae07',
     staging: '19677f2e-9e7d-4187-9a3a-ba226200ae07',
     production: '19677f2e-9e7d-4187-9a3a-ba226200ae07',
   },
-  appBundle: {
-    dev: 'br.com.mbamobi.ionic.starter',
-    staging: 'br.com.mbamobi.ionic.starter',
-    production: 'br.com.mbamobi.ionic.starter',
+  mmApiKey: {
+    dev: 'e1e5294814db8a399989c5c9e8fd0a376b32362e',
+    staging: 'e1e5294814db8a399989c5c9e8fd0a376b32362e',
+    production: 'e1e5294814db8a399989c5c9e8fd0a376b32362e'
   },
   googleProjectNumber: {
     dev: '101349642110',
@@ -89,7 +63,7 @@ export const AppConfig = {
   urlResolver: {
     dev: APP_ROUTES_DEV
   },
-  mmprovider: {
+  mmmural: {
     mmmessage: 'mmmessage'
   }
 };
