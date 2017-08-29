@@ -1,10 +1,13 @@
 // TODO link para documentação do URL resolver com docs e exemplos
 export const APP_ROUTES_DEV = {
   '_defaults': {
-    'host': 'http://ec2-52-67-203-191.sa-east-1.compute.amazonaws.com:8080/rest/'
+    'host': 'http://ec2-52-67-203-191.sa-east-1.compute.amazonaws.com:8080/rest/',
+    'variables': {
+      'mm-url': 'http://ec2-52-67-203-191.sa-east-1.compute.amazonaws.com:8080'
+    }
   },
   'notification-register-client': {
-    'url': 'http://ec2-52-67-203-191.sa-east-1.compute.amazonaws.com:8080/mba-mmmessage/client',
+    'url': '{mm-url}/mba-mmmessage/client',
     'method': 'POST',
     'params': {
       'noAppBundle': {
@@ -24,22 +27,32 @@ export const APP_ROUTES_DEV = {
       'nuPhone': {
         'type': 'string'
       }
-    },
-    'notification-update-tags': {
-      'url': 'http://ec2-52-67-203-191.sa-east-1.compute.amazonaws.com:8080/mba-mmmessage/client/tags',
-      'method': 'POST',
-      'params': {
-        'dsIdentity': {
-          'type': 'string'
-        },
-        'tags': {
-          'type': 'array'
-        }
+    }
+  },
+  'notification-update-tags': {
+    'url': '{mm-url}/mba-mmmessage/client/tags',
+    'method': 'POST',
+    'params': {
+      'dsIdentity': {
+        'type': 'string'
+      },
+      'tags': {
+        'type': 'array'
       }
     }
   },
+  'notification-list-tags': {
+    'url': '{mm-url}/mba-mmmessage/tag?noAppBundle={noAppBundle}',
+    'method': 'GET'
+  },
   'mmmessage': {
     'url': 'http://ec2-52-67-203-191.sa-east-1.compute.amazonaws.com:8080/mba-mmmessage'
+  }
+};
+
+export const APP_ROUTES_PROD = {
+  '_defaults': {
+    'host': 'http://ec2-52-67-203-191.sa-east-1.compute.amazonaws.com:8080/rest/'
   }
 };
 
@@ -61,7 +74,8 @@ export const AppConfig = {
     production: '101349642110',
   },
   urlResolver: {
-    dev: APP_ROUTES_DEV
+    dev: APP_ROUTES_DEV,
+    'prod:dev': APP_ROUTES_PROD
   },
   mmmural: {
     mmmessage: 'mmmessage'

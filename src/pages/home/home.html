@@ -1,4 +1,4 @@
-<ion-content>
-  <div>Hello</div>
-  <mural [user]="user.getUserIdentity()" [apiKey]="user.getApiKey()"></mural>
-</ion-content>
+<ion-tabs>
+    <ion-tab tabIcon="md-pricetags" tabTitle="Tags" [root]="tags"></ion-tab>
+    <ion-tab tabIcon="md-mail-open" [root]="mural" tabTitle="Mural"></ion-tab>
+</ion-tabs>

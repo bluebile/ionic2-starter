@@ -12,6 +12,7 @@ import { HttpPluginsIonicModule } from '@mbamobi/http-plugins-ionic';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MbaNotificationProvider, ProvidersNative } from '../providers';
 import { User } from '../providers/user';
+import { MuralIonicModule } from '@mbamobi/mural-ionic';
 
 // extração mensagem de erro do serviço
 export function extraMessageError() {}
@@ -29,7 +30,8 @@ export function extraMessageError() {}
     ConfigurationModule.initialize(AppConfig, Env),
     UrlResolverModule.initialize(),
     HttpModule.initialize(DefaultPlugins),
-    HttpPluginsIonicModule
+    HttpPluginsIonicModule,
+    MuralIonicModule.forRoot()
   ],
   providers: [
     { provide: ThrowExceptionStatusToken, useValue: extraMessageError },

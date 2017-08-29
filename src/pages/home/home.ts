@@ -1,14 +1,23 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { User } from '../../providers';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage({
   name: 'home'
 })
 @Component({
-  selector: 'home-page',
-  templateUrl: 'home.html'
+  selector: 'page-home',
+  templateUrl: 'home.html',
 })
 export class HomePage {
-  constructor(public user: User) {}
+
+  mural = 'mural';
+  tags = 'tags';
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HomePage');
+  }
+
 }

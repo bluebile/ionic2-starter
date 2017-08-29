@@ -1,0 +1,12 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Mural de avisos</ion-title>
+      <ion-buttons end>
+        <button color="light" icon-only ion-button><ion-icon name="md-log-out"></ion-icon></button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+<ion-content>
+  <mural [user]="user.getUserIdentity()" [apiKey]="user.getApiKey()"></mural>
+  <!-- <button ion-button (click)="teste()">CLIQUE-ME</button> -->
+</ion-content>

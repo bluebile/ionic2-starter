@@ -26,6 +26,12 @@ export class MbaNotificationProvider {
     return this.http.request('notification-register-client', params);
   }
 
+  listTags() {
+    return this.http.request('notification-list-tags', {
+      noAppBundle: this.deviceInfo.bundle
+    }).toPromise();
+  }
+
   updatetags(params) {
     return this.http.request('notification-update-tags', params);
   }
