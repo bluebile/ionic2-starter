@@ -31,18 +31,10 @@ export const APP_ROUTES_DEV = {
   },
   'notification-update-tags': {
     'url': '{mm-url}/mba-mmmessage/client/tags',
-    'method': 'POST',
-    'params': {
-      'dsIdentity': {
-        'type': 'string'
-      },
-      'tags': {
-        'type': 'array'
-      }
-    }
+    'method': 'PUT'
   },
   'notification-list-tags': {
-    'url': '{mm-url}/mba-mmmessage/tag?noAppBundle={noAppBundle}',
+    'url': '{mm-url}/mba-mmmessage/client/tags/{dsIdentity}/{noAppBundle}',
     'method': 'GET'
   },
   'mmmessage': {
@@ -64,9 +56,9 @@ export const AppConfig = {
     production: '19677f2e-9e7d-4187-9a3a-ba226200ae07',
   },
   mmApiKey: {
-    dev: 'e1e5294814db8a399989c5c9e8fd0a376b32362e',
-    staging: 'e1e5294814db8a399989c5c9e8fd0a376b32362e',
-    production: 'e1e5294814db8a399989c5c9e8fd0a376b32362e'
+    dev: 'aeb1f4c55bb757427d66ae1094d732d781f78af5',
+    staging: 'aeb1f4c55bb757427d66ae1094d732d781f78af5',
+    production: 'aeb1f4c55bb757427d66ae1094d732d781f78af5'
   },
   googleProjectNumber: {
     dev: '101349642110',

@@ -21,4 +21,12 @@ export class TagsPage {
     });
   }
 
+  vincular() {
+    this.mbaNotification.updatetags(this.tags).then(() => {
+      console.log('OK!');
+    }).catch(() => {
+      console.log('erro');
+    });
+  }
+
 }

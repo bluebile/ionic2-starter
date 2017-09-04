@@ -28,12 +28,27 @@ export class MbaNotificationProvider {
 
   listTags() {
     return this.http.request('notification-list-tags', {
+      dsIdentity: this.user.getUserIdentity(),
       noAppBundle: this.deviceInfo.bundle
     }).toPromise();
   }
 
-  updatetags(params) {
-    return this.http.request('notification-update-tags', params);
+  updatetags(tags) {
+    return this.http.request('notification-update-tags', this.buildTagsParam(tags)).toPromise();
+  }
+
+  buildTagsParam(tags) {
+    let params = {}, arr = [];
+    for (let tag of tags) {
+      if (tag['isUserTag']) {
+        arr.push(tag['idTag']);
+      }
+    }
+    params['tags'] = arr;
+    params['dsIdentity'] = this.user.getUserIdentity();
+    params['noAppBundle'] = this.deviceInfo.bundle;
+    console.log(params);
+    return params;
   }
 
   registerNotificationDevice() {

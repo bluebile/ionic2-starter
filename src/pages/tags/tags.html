@@ -9,7 +9,9 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let tag of tags">
-      {{ tag.dsTag }}
+      <ion-label>{{ tag.dsTag }}</ion-label>
+      <ion-checkbox [(ngModel)]="tag.isUserTag" [checked]="tag.isUserTag"></ion-checkbox>
     </ion-item>
   </ion-list>
+  <button ion-button (click)="vincular()"> Vincular </button>
 </ion-content>

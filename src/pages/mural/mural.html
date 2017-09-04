@@ -7,6 +7,6 @@
     </ion-navbar>
   </ion-header>
 <ion-content>
-  <mural [user]="user.getUserIdentity()" [apiKey]="user.getApiKey()"></mural>
+  <mural [dsIdentity]="user.getUserIdentity()" [apiKey]="user.getApiKey()" [noAppBundle]="deviceInfo['bundle']"></mural>
   <!-- <button ion-button (click)="teste()">CLIQUE-ME</button> -->
 </ion-content>
