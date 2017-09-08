@@ -30,7 +30,7 @@ export const APP_ROUTES_DEV = {
     }
   },
   'notification-update-tags': {
-    'url': '{mm-url}/mba-mmmessage/client/tags',
+    'url': '{mm-url}/mba-mmmessage/client/tags/add',
     'method': 'PUT'
   },
   'notification-list-tags': {
