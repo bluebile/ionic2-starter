@@ -26,7 +26,8 @@
     "preionic:build": "node ./scripts/app/replace.env",
     "preionic:serve": "node ./scripts/app/replace.env",
     "prepush": "npm run lint --bailOnLintError true",
-    "server:init": "json-server ./server/router.js --watch"
+    "server:init": "json-server ./server/router.js --watch",
+    "create:component": "node ./scripts/app/create_component.js"
   },
   "config": {
     "ionic_copy": "./scripts/app/copy.config.js",
