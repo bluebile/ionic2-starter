@@ -1,4 +1,4 @@
-# Bulding anp publishing a module
+# Bulding and publishing a module
 
 * Change the description in your package.json
 * Change the README file
