@@ -1,11 +1,7 @@
 # Ionic2-Starter
 
-Projeto starter com features comuns para os projetos.
+Projeto starter com a estrutra básica de um Aplicativo.
 
-- Login
-- Home
-- Termo
-- Onboard
 
 # Executando o projeto
 ```npm install``` ou ```yarn install```
