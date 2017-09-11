@@ -68,9 +68,16 @@
   },
   "keywords": [
     "ionic",
-    "angular"
+    "angular",
+    "configuration",
+    "environment",
+    "url",
+    "http",
+    "headers",
+    "get",
+    "post"
   ],
-  "author": "MBA Mobi <developer@mbamobi.com.br>",
+  "author": "Ramon Ornelas <ramon.ornela@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mbamobi/ionic2-starter/issues"

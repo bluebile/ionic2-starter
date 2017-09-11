@@ -1,7 +1,7 @@
 {
   "name": "@mbamobi/dummy",
   "version": "0.0.1",
-  "description": "Change this description",
+  "description": "Manager configuration project in file json, database or static object",
   "main": "dist/umd/index.js",
   "typings": "dist/esm/index.d.ts",
   "module": "dist/esm/index.js",
@@ -36,9 +36,9 @@
     "@angular/compiler": "4.1.2",
     "@angular/compiler-cli": "4.1.2",
     "@angular/core": "4.1.2",
+    "@angular/http": "4.1.2",
     "@angular/platform-browser": "4.1.2",
     "@angular/platform-browser-dynamic": "4.1.2",
-    "ionic-angular": "^3.5.0",
     "@types/jasmine": "2.2.33",
     "codelyzer": "2.0.0-beta.4",
     "commitizen": "^2.8.6",
@@ -60,20 +60,27 @@
   },
   "peerDependencies": {
     "@angular/core": "^4.1.0",
-    "ionic-angular": "^3.5.0"
+    "@angular/http": "^4.1.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mbamobi/ionic2-starter.git"
+    "url": "git+https://github.com/mbamobi/configuration.git"
   },
   "keywords": [
     "ionic",
-    "angular"
+    "angular",
+    "configuration",
+    "environment",
+    "url",
+    "http",
+    "headers",
+    "get",
+    "post"
   ],
-  "author": "MBA Mobi <developer@mbamobi.com.br>",
+  "author": "Ramon Ornelas <ramon.ornela@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mbamobi/ionic2-starter/issues"
+    "url": "https://github.com/mbamobi/configuration/issues"
   },
-  "homepage": "https://github.com/mbamobi/ionic2-starter"
+  "homepage": "https://github.com/mbamobi/configuration"
 }

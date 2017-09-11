@@ -68,7 +68,14 @@
   },
   "keywords": [
     "ionic",
-    "angular"
+    "angular",
+    "configuration",
+    "environment",
+    "url",
+    "http",
+    "headers",
+    "get",
+    "post"
   ],
   "author": "MBA Mobi <developer@mbamobi.com.br>",
   "license": "MIT",
