@@ -78,7 +78,8 @@
     "shelljs": "0.7.6",
     "tslint": "^5.2.0",
     "tslint-eslint-rules": "4.0.0",
-    "typescript": "2.4.2"
+    "typescript": "2.4.2",
+    "download": "^6.2.5"
   },
   "commitplease": {
     "style": "angular",
