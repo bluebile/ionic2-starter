@@ -1,8 +1,18 @@
 page-onboard {
 
+  $primary: map-get($colors, primary);
+
+  .scroll-content {
+    background: $primary;
+  }
+
   .toolbar-background {
-    background: #fff;
+    background: darken($primary, 10);
     border-color: transparent;
+  }
+
+  .btn-pular{
+    color: white;
   }
 
   .slide-zoom {
@@ -27,11 +37,15 @@ page-onboard {
     padding: 0 40px;
     font-size: 14px;
     line-height: 1.5;
-    color: #60646B;
+    color: white;
 
     b {
       color: #000000;
     }
+  }
+
+  .btn-continuar{
+    color: white;
   }
 
 }
