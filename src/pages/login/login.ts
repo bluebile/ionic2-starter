@@ -1,6 +1,6 @@
 import { User } from '../../providers';
 import { Masks, Validators as ValidatorsInternal } from '../../util';
-import { Home, Termo } from '../index';
+import { Home, RecoveryPassword, Termo } from '../index';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Storage } from '@ionic/storage';
@@ -20,14 +20,14 @@ export class LoginPage {
   mask = Masks.cpf;
 
   constructor(formBuilder: FormBuilder,
-            private app: App,
-            private loadingCtrl: LoadingController,
-            private storage: Storage,
-            private toastCtrl: ToastController,
-            private user: User) {
+              private app: App,
+              private loadingCtrl: LoadingController,
+              private storage: Storage,
+              private toastCtrl: ToastController,
+              private user: User) {
     this.form = formBuilder.group({
-      cpf: [ '', Validators.compose([ Validators.required, ValidatorsInternal.cpf ]) ],
-      password: [ '', Validators.compose([ Validators.required ]) ],
+      cpf: ['', Validators.compose([Validators.required, ValidatorsInternal.cpf])],
+      password: ['', Validators.compose([Validators.required])],
     });
   }
 
@@ -38,18 +38,18 @@ export class LoginPage {
 
     let msg = '';
 
-    if (this.form.controls[ 'cpf' ].hasError('required')) {
+    if (this.form.controls['cpf'].hasError('required')) {
       msg = 'O CPF é obrigatório!';
-    } else if (this.form.controls[ 'cpf' ].hasError('invalid')) {
+    } else if (this.form.controls['cpf'].hasError('invalid')) {
       msg = 'CPF inválido.';
-    } else if (this.form.controls[ 'password' ].hasError('required')) {
+    } else if (this.form.controls['password'].hasError('required')) {
       msg = 'A senha é obrigatória';
     }
 
     const toast = this.toastCtrl.create({
-        message: msg,
-        duration: 3001,
-        position: 'top'
+      message: msg,
+      duration: 3001,
+      position: 'top'
     });
 
     toast.present();
@@ -72,8 +72,15 @@ export class LoginPage {
         return;
       }
       this.app.getActiveNav().setRoot(Home);
-    }).catch(() => {
+    }).catch((value) => {
+      console.log(value);
+
       loading.dismiss();
+      this.toastCtrl.create({
+        message: 'Usuário ou senha inválida',
+        duration: 3001,
+        position: 'top'
+      }).present();
     });
   }
 
@@ -89,6 +96,6 @@ export class LoginPage {
   }
 
   recoveyPassword() {
-    this.app.getActiveNav().push('recovery-password');
+    this.app.getActiveNav().push(RecoveryPassword);
   }
 }
