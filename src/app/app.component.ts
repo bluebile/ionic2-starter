@@ -63,6 +63,7 @@ export class MyApp {
   }
 
   choiceLoginOrHome(): any {
+    console.log('choiceLoginOrHome');
     if (Login) {
       if (!this.auth.has()) {
         return Login;
