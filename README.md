@@ -16,6 +16,9 @@ Projeto starter com features comuns para os projetos.
 ### Iniciar server dev
 ```npm run ionic:serve```
 
+### Login
+Realize o login com uma das credenciais do arquivo db.json
+
 # Build Cordova
 
 | Plataforma    | Comando                     |
