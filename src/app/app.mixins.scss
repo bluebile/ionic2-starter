@@ -1,0 +1,176 @@
+
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin horizontal-centerer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin vertical-centerer {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin vertical-centerer-abs {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/*-- horizontal-align --*/
+
+@mixin horizontalAlign($position, $percentage) {
+  position: $position;
+  left: $percentage;
+  @include transformTranslateX(-$percentage);
+}
+
+/*-- vertical-align --*/
+
+@mixin verticalAlign($position, $percentage) {
+  position: $position;
+  top: $percentage;
+  @include transformTranslateY(-$percentage);
+}
+/**
+* Centraliza na vertical
+* @param {string} [$value=center] Valor usado para informar a posicao do alinhamento
+*/
+@mixin align-items($value: center) {
+  -ms-flex-align: $value;
+  -webkit-align-items: $value;
+  -webkit-box-align: $value;
+  align-items: $value;
+}
+/**
+* Centraliza na horizontal
+* @param {string} [$value=center] Valor usado para informar a posicao do alinhamento
+*/
+@mixin justify-content($value: center) {
+  -ms-justify-content: $value;
+  -webkit-justify-content: $value;
+  justify-content: $value;
+}
+
+@mixin vertical-center-flex {
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@mixin shadow {
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .12);
+}
+
+// App Mixins
+/**
+* Aplica a propriedade desejada para todos os prefixos dos browsers
+*
+* @param {string} $property - Propriedade que deseja aplicar os prefixos
+* @param {string} $value - Valor da propriedade a ser aplicado o prefixo
+*/
+@mixin vendor-prefixes($property, $value) {
+  #{$property}: $value;
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+}
+/**
+* Define as bordas arredondadas de um elemento
+*
+* @param {string} $radius - Texto com os valores da borda. Pode ser
+* o valor geral ou valores especificos para cada borda.
+*/
+@mixin border-radius($radius) {
+  @include vendor-prefixes(border-radius, $radius);
+}
+
+/**
+* Altera o background color para uma porcentagem mais clara da cor
+*
+* @param {string} $color - Cor a ser editada
+* @param {string} $percent - Porcentagem a ser editada
+*/
+@mixin bg-lighten($color, $percent) {
+  background-color: lighten($color, $percent) !important;
+}
+
+
+/**
+* Altera o background color para uma porcentagem mais escura da cor
+*
+* @param {string} $color - Cor a ser editada
+* @param {string} $percent - Porcentagem a ser editada
+*/
+@mixin bg-darken($color, $percent) {
+  background-color: darken($color, $percent) !important;
+}
+/**
+* Habilita o flex nos filhos diretos
+*/
+@mixin display-flex() {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+/**
+* Cria um circulo perfeito
+* @param {string} $width - Largura do circulo
+* @param {string} $color - Cor do circulo
+*/
+@mixin circle($width, $color) {
+  width: $width;
+  height: $width;
+  @include border-radius($width/2);
+  background: $color;
+  @include vendor-prefixes(background-clip, padding-box);
+}
+/**
+* Cria triangulos
+* @param {string} $width - Largura da borda
+* @param {string} $dir - Direcao da seta
+* @param {string} $color - Cor do circulo
+*/
+@mixin triangle($width, $dir, $color) {
+  width: 0;
+  height: 0;
+  @if $dir == up {
+    border-right: $width solid transparent;
+    border-bottom: $width solid $color;
+    border-left: $width solid transparent;
+  } @else if $dir == down {
+    border-top: $width solid $color;
+    border-right: $width solid transparent;
+    border-left: $width solid transparent;
+  } @else if $dir == right {
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-left: $width solid $color;
+  } @else if $dir == left {
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-right: $width solid $color;
+  }
+}
+
+/*-- max-lines --*/
+
+@mixin maxLines($value) {
+  //overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $value !important; //!please
+  -webkit-box-orient: vertical;
+  color: red;
+}
